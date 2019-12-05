@@ -3,6 +3,7 @@ import fetch from "isomorphic-unfetch";
 import Head from "next/head";
 import Link from "next/link";
 import ReactMarkdown from "react-markdown";
+import { SSL_OP_TLS_BLOCK_PADDING_BUG } from "constants";
 
 const Home = ({ posts }) => (
   <div className="container">
@@ -29,8 +30,8 @@ const Home = ({ posts }) => (
       </div>
     </div>
 
-    {posts.map(post => (
-      <div className="blog">
+    {posts.map( (post) => (
+      <div key={post.slug} className="blog">
         <h2 className="blog-title">
           <Link href={post.slug}>
             <a className="blog-title-link">{post.title}</a>
