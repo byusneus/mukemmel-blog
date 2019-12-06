@@ -1,24 +1,34 @@
 import React, {useRef, useEffect} from "react";
 import fetch from "isomorphic-unfetch";
-import Head from "next/head";
 import Link from "next/link";
 import ReactMarkdown from "react-markdown";
-import { Power3 } from "gsap";
+import Layout from "../components/layouts/Layout";
+import { TweenMax, Power3 } from "gsap";
 
 const Home = ({posts}) => {
 
   let logoItem = useRef(null);
 
   useEffect(() => {
-    logoItem.style.display = 'none';
+    TweenMax.fromTo(
+      logoItem,
+      .8,
+      {
+        opacity: 0,
+        x: -400,
+        ease: Power3.easeOut
+      },
+      {
+        opacity: 1,
+        x: 0,
+      }
+    )
   });
 
   return(
-    <div className="container">
-    <Head>
-      <title>Home</title>
-      <link rel="icon" href="/favicon.ico" />
-    </Head>
+   <Layout>
+      <div className="container">
+    
 
     <div className="hero">
       <h1 ref={el => {logoItem = el}} className="hero-title">Selman Kahya</h1>
@@ -60,6 +70,7 @@ const Home = ({posts}) => {
 
       .hero-title {
         font-size: 48px;
+        opacity: 0;
       }
 
       .blog-date {
@@ -74,6 +85,7 @@ const Home = ({posts}) => {
       }
     `}</style>
   </div>
+   </Layout>
   );
 };
 
