@@ -1,34 +1,32 @@
-import React from "react";
+import React, {useRef, useEffect} from "react";
 import fetch from "isomorphic-unfetch";
 import Head from "next/head";
 import Link from "next/link";
 import ReactMarkdown from "react-markdown";
-import { SSL_OP_TLS_BLOCK_PADDING_BUG } from "constants";
+import { Power3 } from "gsap";
 
-const Home = ({ posts }) => (
-  <div className="container">
+const Home = ({posts}) => {
+
+  let logoItem = useRef(null);
+
+  useEffect(() => {
+    logoItem.style.display = 'none';
+  });
+
+  return(
+    <div className="container">
     <Head>
       <title>Home</title>
       <link rel="icon" href="/favicon.ico" />
     </Head>
 
     <div className="hero">
-      <h1 className="hero-title">Selman Kahya</h1>
+      <h1 ref={el => {logoItem = el}} className="hero-title">Selman Kahya</h1>
       <div className="hero-social-links">
-        <Link href="https://medium.com/@selmankahya">
-          <a className="social-link">Medium</a>
-        </Link>
-        <Link href="https://www.twitter.com/selmankahyax">
-          <a className="social-link">Twitter</a>
-        </Link>
-        <Link href="https://www.linkedin.com/in/selmankahya">
-          <a className="social-link">LinkedIn</a>
-        </Link>
-        <Link href="https://www.instagram.com/selmankahyax/?hl=en">
-          <a className="social-link">Instagram</a>
-        </Link>
+        
       </div>
     </div>
+    <button onMouseUp={() => console.log("alert")}>Butoooooon</button>
 
     {posts.map( (post) => (
       <div key={post.slug} className="blog">
@@ -76,7 +74,8 @@ const Home = ({ posts }) => (
       }
     `}</style>
   </div>
-);
+  );
+};
 
 Home.getInitialProps = async ({ req }) => {
   // TODO: aşağıdaki satırda bulunan adresi kendi sunucu adresinle değiştirmelisin
