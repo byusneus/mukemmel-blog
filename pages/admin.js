@@ -1,26 +1,32 @@
+import { useState } from "react";
+import Router from "next/router";
 import firebase from "../common/firebase";
 
-class Admin extends React.Component  {
-    login = () => {
-        const provider = new firebase.auth.GoogleAuthProvider();
-        firebase.auth().signInWithPopup(provider)
-            .then( res => {
-            console.log("res.credential", res.credential);
-            console.log("res.user",res.user);
+const Admin = () =>  {
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+
+    const login = () => {
+        firebase.auth().signInWithEmailAndPassword(email, password)
+            .then(res => {
+                Router.push("/dashboard");
             })
-            .catch( error => {
-                console.log("Login failed");
+            .catch(function(error) {
+                // Handle Errors here.
+                var errorCode = error.code;
+                var errorMessage = error.message;
+                // ...
             });
     }
 
-    render(){
-        return(
-            <div className="container">
-                Admin Login PAge
-                <button className="btn btn-primary" onClick={this.login}>Login</button>
-            </div>
-        )
-    }
+    return(
+        <div className="container">
+            Admin Login PAge<br/>
+            <input className="form-check-input" onChange={event => setEmail(event.target.value)} />
+            <input className="form-check-input" onChange={event => setPassword(event.target.value)} /><br/>
+            <button className="btn btn-primary" onClick={login}>Login</button>
+        </div>
+    )
 }
 
-export default Admin;
+export default Admin; 

@@ -1,10 +1,19 @@
 module.exports = {
-  webpack: config => {
+  webpack: (config, { defaultLoaders }) => {
     config.module.rules.push({
-      test: /\.md$/,
-      use: "raw-loader"
-    });
+      test: /\.scss$/,
+      use: [
+        defaultLoaders.babel,
+        {
+          loader: require('styled-jsx/webpack').loader,
+          options: {
+            type: 'scoped',
+          },
+        },
+        'sass-loader',
+      ],
+    })
 
-    return config;
-  }
-};
+    return config
+  },
+}
