@@ -20,14 +20,14 @@ const Home = () => {
         <div className="container-fluid">
           <div className="row">
             <div className="header-inner">
-              <div className="logo">BUSE</div>
+              <div className="logo">BUSEM</div>
               <div className="navigation">
                 <nav>
                   <ul>
-                    <li><Link href="/"><a>About</a></Link></li>
-                    <li><Link href="/"><a>About</a></Link></li>
-                    <li><Link href="/"><a>About</a></Link></li>
-                    <li><Link href="/"><a>About</a></Link></li>
+                    <li><Link href="/"><a>Anasayfa</a></Link></li>
+                    <li><Link href="/"><a>Kategoriler</a></Link></li>
+                    <li><Link href="/"><a>Yemeğin Hikayesi</a></Link></li>
+                    <li><Link href="/"><a>Hakkımda</a></Link></li>
                   </ul>
                 </nav>
               </div>
