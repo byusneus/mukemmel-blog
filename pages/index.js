@@ -38,11 +38,66 @@ const Home = () => {
       </header>
       <section id="banner">
         <div className="row">
-          <div className="square"></div>
-          <div className="square"></div>
-          <div className="square"></div>
-          <div className="square"></div>
-          <div className="square"></div>
+          <div className="box">
+            <img src="https://images.pexels.com/photos/1640772/pexels-photo-1640772.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt=""/>
+            <div className="food-info">
+              <div className="food-title">
+                <h3>Bir Buse Yemeği</h3>
+                <span>Lorem ipsum merhaba dünya</span>
+              </div>
+              <div className="food-details">
+
+              </div>
+            </div>
+          </div>
+          <div className="box">
+              <img src="https://images.pexels.com/photos/2662875/pexels-photo-2662875.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt=""/>
+              <div className="food-info">
+                <div className="food-title">
+                  <h3>Bir Buse Yemeği</h3>
+                  <span>Lorem ipsum merhaba dünya</span>
+                </div>
+                <div className="food-details">
+                  
+                </div>
+              </div>
+          </div>
+          <div className="box">
+          <img src="https://images.pexels.com/photos/2059193/pexels-photo-2059193.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt=""/>
+            <div className="food-info">
+              <div className="food-title">
+                <h3>Bir Buse Yemeği</h3>
+                <span>Lorem ipsum merhaba dünya</span>
+              </div>
+              <div className="food-details">
+                
+              </div>
+            </div>
+          </div>
+          <div className="box">
+          <img src="https://images.pexels.com/photos/675951/pexels-photo-675951.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt=""/>
+            <div className="food-info">
+              <div className="food-title">
+                <h3>Bir Buse Yemeği</h3>
+                <span>Lorem ipsum merhaba dünya</span>
+              </div>
+              <div className="food-details">
+                
+              </div>
+            </div>
+          </div>
+          <div className="box">
+          <img src="https://images.pexels.com/photos/825661/pexels-photo-825661.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt=""/>
+            <div className="food-info">
+              <div className="food-title">
+                <h3>Bir Buse Yemeği</h3>
+                <span>Lorem ipsum merhaba dünya</span>
+              </div>
+              <div className="food-details">
+                
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     <style jsx>{styles}</style>
