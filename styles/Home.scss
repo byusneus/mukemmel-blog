@@ -87,11 +87,9 @@ header {
                         }
                     }
                 }
-                @media(max-width: $tablet){
-                    display:none;
-                }
             }
             @media(max-width: $tablet){
+                flex-direction: column;
                 justify-content: center;
             }
         }
@@ -116,12 +114,13 @@ header {
             height: 250px;
             margin: 10px;
             border-radius: 10px;
+            box-shadow: 8px 8px 10px gray;
             overflow: hidden;
             img{
                 flex: 1;
                 height: 100%;
                 border-radius: 10px;
-                filter: brightness(0.45) drop-shadow(8px 8px 10px gray);
+                filter: brightness(0.45);
             }
 
             .food-info {
