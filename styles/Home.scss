@@ -150,10 +150,11 @@ header {
                     align-items: center;
                     .cooking-information{
                         display:flex;
-                        width: 35%;
+                        width: 100%;
                         height: auto;
-                        justify-content: space-between;
+                        justify-content: flex-end;
                         .cooking-time{
+                            margin-right: 20px;
                             display: flex;
                             flex-direction: column;
                             justify-content: center;
@@ -202,10 +203,8 @@ header {
                 }
             }
             
-            @media(max-width: $widescreen){
-                &:nth-child(2){
-                    flex: 58%;
-                }
+            &:nth-child(2){
+                flex: 58%;
             }
             @media(max-width: $laptop){
                 &:nth-child(1){
@@ -251,7 +250,7 @@ header {
     left: 0;
     right: 0;
     background-color: #F7F7F7;
-    height: 800px;
+    height: 900px;
     .categories-container {
         position: relative;
         display: flex;
@@ -261,38 +260,127 @@ header {
         margin-left: 50px;
         .categories-title{
             font-family: 'Zilla Slab', serif;
-            font-size: 1.2rem;
+            font-size: 1.8rem;
             font-weight: 600;
+            @media(max-width: $laptop){
+                font-size: 1.55rem;
+            }
+            @media(max-width: $tablet){
+                font-size: 1.2rem;
+            }
         }
-        .row-one{
+        .row-category{
             margin-top: 75px;
             display: flex;
-            justify-content: space-between;
+            flex-wrap: wrap;
+            width: 100%;
+            justify-content: center;
             .c-box{
-                position: relative;
                 display: flex;
+                width: 23%;
                 flex-direction: column;
-                margin-left: 10px;
-                margin-right: 10px;
-                width: 100%;
-                height: 300px;
-                background-color:red;
+                margin: 5px;
+                border: 2px solid rgba(0, 0, 0, 0.349);
+                border-radius: 5px;
+                text-align: center;
+                height: auto;
                 .c-img{
-                    height: 100px;
                     img{
-                        width: 100%;
-                        height: 100px;
+                        min-width: 100%;
+                        height: 200px;
+                        object-fit: cover;
+                        @media(max-width: $laptop){
+                            height: 180px;
+                        }
+                        @media(max-width: $tablet){
+                            height: 100px;
+                        }
                     }
                 }
+                span{
+                    margin-top: 10px;
+                    font-family: 'Zilla Slab', serif;
+                    font-size: 1.5rem;
+                    font-weight: 700;
+                    @media(max-width: $laptop){
+                        font-size: 1.1rem;
+                    }
+                    @media(max-width: $tablet){
+                        font-size: .9rem;
+                    }
+                }
+                .recipe-number{
+                    width: 25%;
+                    margin:10px auto;
+                    background-color: #C7C8C7;
+                    padding: 5px;
+                    border-radius: 5px;
+                    span{
+                        font-family: 'Zilla Slab', serif;
+                        font-size: .75rem;
+                        font-weight: 600;
+                        color: #fff;
+                        @media(max-width: $laptop){
+                            font-size: .6rem;
+                        }
+                        @media(max-width: $tablet){
+                            font-size: .4rem;
+                        }
+                    }
+                    @media(max-width: $laptop){
+                        padding: 2px;
+                    }
+                    @media(max-width: $tablet){
+                        width: 50%;
+                    }
+                }
+                @media(max-width: $laptop){
+                    width: 30%;
+                }
+                @media(max-width: $tablet){
+                    width: 23%;
+                    margin:0;
+                    margin-top: 5px;
+                    margin-left: 2px;
+                }
             }
+            @media(max-width: $laptop){
+                margin-top: 35px;
+            }
+        }
+        @media(max-width: $laptop){
+            margin-top: 35px;
+        }
+        @media(max-width: $tablet){
+            margin-top: 35px;
+            margin-left: 0;
+            margin-right: 0;
         }
     }
 
     @media(max-width:$laptop){
         top: 100vh;
+        height: 1000px;
     }
 
     @media(max-width:$tablet){
         top: 90vh;
+        height: 550px;
+    }
+}
+
+#most-liked-recipes{
+    position: absolute;
+    top: 175vh;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #fff;
+    height: 200px;
+    .carousel{
+        position: relative;
+        display: flex;
+        margin-left: 50px;
+        margin-right: 50px;
     }
 }

@@ -1,4 +1,4 @@
-import React, {useRef, useEffect} from "react";
+import React, { useRef, useEffect } from "react";
 import Link from "next/link";
 import Head from "../components/Head";
 import styles from '../styles/Home.scss';
@@ -10,12 +10,12 @@ const Home = () => {
   let logoItem = useRef(null);
 
   useEffect(() => {
-    
+
   });
 
-  return(
-   <div className="container">
-      <Head title="Home"/>
+  return (
+    <div className="container">
+      <Head title="Home" />
 
       <header id="header">
         <div className="container-fluid">
@@ -34,154 +34,210 @@ const Home = () => {
               </div>
             </div>
           </div>
-          <hr className="header-hr"/>
+          <hr className="header-hr" />
         </div>
       </header>
-      
+
       <section id="banner">
         <div className="row">
           <div className="box">
-            <img src="https://images.pexels.com/photos/1640772/pexels-photo-1640772.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt=""/>
+            <img src="https://images.pexels.com/photos/1640772/pexels-photo-1640772.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="" />
             <div className="food-info">
               <div className="food-title">
                 <h3>Bir Buse Yemeği 1</h3>
                 <span>Lorem ipsum merhaba dünya</span>
               </div>
               <div className="food-details">
-                  <div className="cooking-information">
-                        <div className="cooking-time">
-                          <MdAlarm color="white" fontSize="26"/>
-                          <span className="cooking-information-article">30 min.</span>
-                        </div>
-                        <div className="cooking-time">
-                          <MdContentPaste color="white" fontSize="26"/>
-                          <span className="cooking-information-article">5</span>
-                        </div>
-                      </div>
-                      <div className="cooking-button">
-                        <Link to="/"><a>Tarif</a></Link>
+                <div className="cooking-information">
+                  <div className="cooking-time">
+                    <MdAlarm color="white" fontSize="26" />
+                    <span className="cooking-information-article">30 min.</span>
                   </div>
-              </div>
-            </div>
-          </div>
-          <div className="box">
-              <img src="https://images.pexels.com/photos/2662875/pexels-photo-2662875.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt=""/>
-              <div className="food-info">
-                <div className="food-title">
-                  <h3>Bir Buse Yemeği 2</h3>
-                  <span>Lorem ipsum merhaba dünya</span>
-                </div>
-                <div className="food-details">
-                  <div className="cooking-information">
-                    <div className="cooking-time">
-                      <MdAlarm color="white" fontSize="26"/>
-                      <span className="cooking-information-article">30 min.</span>
-                    </div>
-                    <div className="cooking-time">
-                      <MdContentPaste color="white" fontSize="26"/>
-                      <span className="cooking-information-article">5</span>
-                    </div>
-                  </div>
-                  <div className="cooking-button">
-                    <Link to="/"><a>Tarif</a></Link>
+                  <div className="cooking-time">
+                    <MdContentPaste color="white" fontSize="26" />
+                    <span className="cooking-information-article">5</span>
                   </div>
                 </div>
               </div>
+            </div>
           </div>
           <div className="box">
-          <img src="https://images.pexels.com/photos/2059193/pexels-photo-2059193.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt=""/>
+            <img src="https://images.pexels.com/photos/1640772/pexels-photo-1640772.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="" />
             <div className="food-info">
               <div className="food-title">
-                <h3>Bir Buse Yemeği 3</h3>
+                <h3>Bir Buse Yemeği 1</h3>
                 <span>Lorem ipsum merhaba dünya</span>
               </div>
               <div className="food-details">
-                  <div className="cooking-information">
-                        <div className="cooking-time">
-                          <MdAlarm color="white" fontSize="26"/>
-                          <span className="cooking-information-article">30 min.</span>
-                        </div>
-                        <div className="cooking-time">
-                          <MdContentPaste color="white" fontSize="26"/>
-                          <span className="cooking-information-article">5</span>
-                        </div>
-                      </div>
-                      <div className="cooking-button">
-                        <Link to="/"><a>Tarif</a></Link>
+                <div className="cooking-information">
+                  <div className="cooking-time">
+                    <MdAlarm color="white" fontSize="26" />
+                    <span className="cooking-information-article">30 min.</span>
                   </div>
+                  <div className="cooking-time">
+                    <MdContentPaste color="white" fontSize="26" />
+                    <span className="cooking-information-article">5</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
           <div className="box">
-          <img src="https://images.pexels.com/photos/675951/pexels-photo-675951.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt=""/>
+            <img src="https://images.pexels.com/photos/1640772/pexels-photo-1640772.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="" />
             <div className="food-info">
               <div className="food-title">
-                <h3>Bir Buse Yemeği 4</h3>
+                <h3>Bir Buse Yemeği 1</h3>
                 <span>Lorem ipsum merhaba dünya</span>
               </div>
               <div className="food-details">
-                  <div className="cooking-information">
-                        <div className="cooking-time">
-                          <MdAlarm color="white" fontSize="26"/>
-                          <span className="cooking-information-article">30 min.</span>
-                        </div>
-                        <div className="cooking-time">
-                          <MdContentPaste color="white" fontSize="26"/>
-                          <span className="cooking-information-article">5</span>
-                        </div>
-                      </div>
-                      <div className="cooking-button">
-                        <Link to="/"><a>Tarif</a></Link>
+                <div className="cooking-information">
+                  <div className="cooking-time">
+                    <MdAlarm color="white" fontSize="26" />
+                    <span className="cooking-information-article">30 min.</span>
                   </div>
+                  <div className="cooking-time">
+                    <MdContentPaste color="white" fontSize="26" />
+                    <span className="cooking-information-article">5</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
           <div className="box">
-          <img src="https://images.pexels.com/photos/825661/pexels-photo-825661.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt=""/>
+            <img src="https://images.pexels.com/photos/1640772/pexels-photo-1640772.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="" />
             <div className="food-info">
               <div className="food-title">
-                <h3>Bir Buse Yemeği 5</h3>
+                <h3>Bir Buse Yemeği 1</h3>
                 <span>Lorem ipsum merhaba dünya</span>
               </div>
               <div className="food-details">
-                      <div className="cooking-information">
-                            <div className="cooking-time">
-                              <MdAlarm color="white" fontSize="26"/>
-                              <span className="cooking-information-article">30 min.</span>
-                            </div>
-                            <div className="cooking-time">
-                              <MdContentPaste color="white" fontSize="26"/>
-                              <span className="cooking-information-article">5</span>
-                            </div>
-                          </div>
-                          <div className="cooking-button">
-                            <Link to="/"><a>Tarif</a></Link>
-                      </div>
+                <div className="cooking-information">
+                  <div className="cooking-time">
+                    <MdAlarm color="white" fontSize="26" />
+                    <span className="cooking-information-article">30 min.</span>
+                  </div>
+                  <div className="cooking-time">
+                    <MdContentPaste color="white" fontSize="26" />
+                    <span className="cooking-information-article">5</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="box">
+            <img src="https://images.pexels.com/photos/1640772/pexels-photo-1640772.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="" />
+            <div className="food-info">
+              <div className="food-title">
+                <h3>Bir Buse Yemeği 1</h3>
+                <span>Lorem ipsum merhaba dünya</span>
+              </div>
+              <div className="food-details">
+                <div className="cooking-information">
+                  <div className="cooking-time">
+                    <MdAlarm color="white" fontSize="26" />
+                    <span className="cooking-information-article">30 min.</span>
+                  </div>
+                  <div className="cooking-time">
+                    <MdContentPaste color="white" fontSize="26" />
+                    <span className="cooking-information-article">5</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </section>
+
+      <section id="categories-section">
+        <div className="container">
+          <div className="categories-container">
+            <h2 className="categories-title">TARİF KATEGORİLERİ</h2>
+            <div className="row-category">
+              <div className="c-box">
+                <div className="c-img">
+                  <img src="https://images.pexels.com/photos/277253/pexels-photo-277253.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" />
+                </div>
+                <span>ÇORBA</span>
+                <div className="recipe-number">
+                  <span>192 Tarif</span>
+                </div>
+              </div>
+              <div className="c-box">
+                <div className="c-img">
+                  <img src="https://images.pexels.com/photos/277253/pexels-photo-277253.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" />
+                </div>
+                <span>ÇORBA</span>
+                <div className="recipe-number">
+                  <span>192 Tarif</span>
+                </div>
+              </div>
+              <div className="c-box">
+                <div className="c-img">
+                  <img src="https://images.pexels.com/photos/277253/pexels-photo-277253.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" />
+                </div>
+                <span>ÇORBA</span>
+                <div className="recipe-number">
+                  <span>192 Tarif</span>
+                </div>
+              </div>
+              <div className="c-box">
+                <div className="c-img">
+                  <img src="https://images.pexels.com/photos/277253/pexels-photo-277253.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" />
+                </div>
+                <span>ÇORBA</span>
+                <div className="recipe-number">
+                  <span>192 Tarif</span>
+                </div>
+              </div>
+              <div className="c-box">
+                <div className="c-img">
+                  <img src="https://images.pexels.com/photos/277253/pexels-photo-277253.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" />
+                </div>
+                <span>ÇORBA</span>
+                <div className="recipe-number">
+                  <span>192 Tarif</span>
+                </div>
+              </div>
+              <div className="c-box">
+                <div className="c-img">
+                  <img src="https://images.pexels.com/photos/277253/pexels-photo-277253.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" />
+                </div>
+                <span>ÇORBA</span>
+                <div className="recipe-number">
+                  <span>192 Tarif</span>
+                </div>
+              </div>
+              <div className="c-box">
+                <div className="c-img">
+                  <img src="https://images.pexels.com/photos/277253/pexels-photo-277253.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" />
+                </div>
+                <span>ÇORBA</span>
+                <div className="recipe-number">
+                  <span>192 Tarif</span>
+                </div>
+              </div>
+              <div className="c-box">
+                <div className="c-img">
+                  <img src="https://images.pexels.com/photos/277253/pexels-photo-277253.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" />
+                </div>
+                <span>ÇORBA</span>
+                <div className="recipe-number">
+                  <span>192 Tarif</span>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="categories-section">
-          <div className="container">
-            <div className="categories-container">
-              <h2 className="categories-title">TARİF KATEGORİLERİ</h2>
-              <div className="row-one">
-                <div className="c-box">
-                  <div className="c-img">
-                    <img src="https://images.pexels.com/photos/277253/pexels-photo-277253.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"/>
-                  </div>
-                  <span>SOSLAR</span>
-                </div>
-                <div className="c-box"></div>
-                <div className="c-box"></div>
-              </div>
-            </div>
-          </div>
+      <section id="most-liked-recipes">
+        <div className="carousel">
+          adsdads
+        </div>
       </section>
-    <style jsx>{styles}</style>
-   </div>
+      <style jsx>{styles}</style>
+    </div>
   );
 };
 
