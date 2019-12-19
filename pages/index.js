@@ -1,17 +1,37 @@
 import React, { useRef, useEffect } from "react";
 import Link from "next/link";
 import Head from "../components/Head";
+import dynamic from "next/dynamic";
 import styles from '../styles/Home.scss';
-import { MdAlarm, MdContentPaste } from "react-icons/md";
-import { TweenMax, Power3 } from "gsap";
+import { MdAlarm, MdContentPaste, MdKeyboardArrowRight, MdKeyboardArrowLeft } from "react-icons/md";
+import { TweenLite, Power3 } from "gsap";
+import PopularRecipes from "../components/PopularRecipes";
+
+const popularRecipes = [
+  {
+    title: "Bir Buse Yemeği",
+    image: "https://images.pexels.com/photos/1640772/pexels-photo-1640772.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    recipe: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. ",
+    created: "20/09/2019"
+  },
+  {
+    title: "Bir Buse Yemeği",
+    image: "https://images.pexels.com/photos/1640772/pexels-photo-1640772.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    recipe: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. ",
+    created: "20/09/2019"
+  },
+  {
+    title: "Bir Buse Yemeği",
+    image: "https://images.pexels.com/photos/1640772/pexels-photo-1640772.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    recipe: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. ",
+    created: "20/09/2019"
+  }
+]
 
 const Home = () => {
 
   let logoItem = useRef(null);
-
-  useEffect(() => {
-
-  });
+  
 
   return (
     <div className="container">
@@ -231,11 +251,7 @@ const Home = () => {
         </div>
       </section>
 
-      <section id="most-liked-recipes">
-        <div className="carousel">
-          adsdads
-        </div>
-      </section>
+      <PopularRecipes/>
       <style jsx>{styles}</style>
     </div>
   );

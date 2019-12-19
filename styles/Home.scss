@@ -369,18 +369,3 @@ header {
     }
 }
 
-#most-liked-recipes{
-    position: absolute;
-    top: 175vh;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #fff;
-    height: 200px;
-    .carousel{
-        position: relative;
-        display: flex;
-        margin-left: 50px;
-        margin-right: 50px;
-    }
-}

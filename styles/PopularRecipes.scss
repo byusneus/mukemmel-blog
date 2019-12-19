@@ -1,0 +1,165 @@
+@import "./variables.scss";
+
+#most-liked-recipes{
+    position: absolute;
+    top: 175vh;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    .popular-area{
+        position: relative;
+        width: 100%;
+        height: 750px;
+        .popular-title{
+            margin-left: 125px;
+            margin-bottom: 120px;
+            font-family: 'Zilla Slab', serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+        }
+        .popular-section{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            &:after{
+                
+            }
+            .popular-container{
+                width: 1280px;
+                min-width: 1280px;
+                height: 600px;
+                position: relative;
+                .arrows{
+                    position: absolute;
+                    display: flex;
+                    width: 80px;
+                    align-items: center;
+                    justify-content: center;
+                    bottom: 0;
+                    top: 0;
+                    cursor: pointer;
+                    border-radius: 8px;
+                    transition: .3s ease-in-out;
+                    &:hover{
+                        box-shadow: 0px 0px 30px rgba(0,0,80,.05);
+                    }
+                    &.right{
+                        right: 0;
+                    }
+                }
+                .inner{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    height: 600px;
+                    .p-image{
+                        width: 500px;
+                        height: 600px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        &:after{
+                            content: "";
+                            position: absolute;
+                            width: 250px;
+                            height: 250px;
+                            background: #FFD251;
+                            left: 140px;
+                            top: 0;
+                            border-radius: 100%;
+                            z-index: -9;
+                            @media(max-width: $laptop){
+                                display: none;
+                            }
+                        }
+                        ul{
+                            list-style: none;
+                            margin: 0;
+                            padding: 0;
+                            display: flex;
+                            position: absolute;
+                            overflow: hidden;
+                            height: 350px;
+                            width: 350px;
+                            box-shadow: 0px 0px 40px rgba(0,0,10,.25);
+                            li{
+                                height: 350px;
+                                width: 350px;
+                                img{
+                                    height: 350px;
+                                    width: 350px;
+                                }  
+                            }
+                        }
+                    }
+                    .p-content{
+                        width: 500px;
+                        height: 600px;
+                        display: flex;
+                        align-items: center;
+                        ul{
+                            position: absolute;
+                            overflow: hidden;
+                            margin: 0;
+                            padding: 0;
+                            width: 500px;
+                            height: 600px;
+                            li{
+                                width: 500px;
+                                height: 400px;
+                                color: $text;
+                                display: flex;
+                                align-items: center;
+                                position: absolute;
+                                opacity: 0;
+                                .content-inner{
+                                    width: 500px;
+                                    .title{
+                                        font-family: 'Zilla Slab', serif;
+                                        font-size: 26px;
+                                        letter-spacing: 0.88px;
+                                        line-height: 40px;
+                                        font-weight: 700;
+                                        margin-bottom: 16px;
+                                    }
+                                    .recipe{
+                                        font-family: 'Zilla Slab', serif;
+                                        font-size: 15px;
+                                        letter-spacing: .88px;
+                                        line-height: 28px;
+                                        color: $secondary;
+                                        font-weight: 600;
+                                    }
+                                    .date{
+                                        font-family: 'Zilla Slab', serif;
+                                        font-size: 14px;
+                                        letter-spacing: .88px;
+                                        line-height: 28px;
+                                        color: $secondary;
+                                        text-align: right;
+                                    }
+                                    @media(max-width: $laptop){
+                                        width: 350px;
+                                        margin-top: 300px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    @media(max-width: $laptop){
+                        height: 500px;
+                        flex-direction: column;
+                    }
+                }
+                @media(max-width: $laptop){
+                    width: 600px;
+                    min-width: 600px;
+                    height: 600px;
+                }
+            }
+        }
+    }
+    @media(max-width: $laptop){
+        top: 210vh;
+    }
+}
