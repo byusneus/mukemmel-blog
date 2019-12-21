@@ -34,14 +34,14 @@ const PopularRecipes = () => {
     const [state, setState] = useState({
         isActive1: true,
         isActive2: false,
-        isActive3: false
+        isActive3: false,
+        clickable: true
     });
 
     useEffect(() => {
         TweenLite.to(popularRecipesList.children[0],0,{
         opacity:1
         })
-        console.log(circle.classList[1])
     }, []);
 
     const slideLeft = (index, duration, multiplied = 1) => {
@@ -80,8 +80,8 @@ const PopularRecipes = () => {
 
     const nextSlide = () => {
         if(imageList.children[0].classList.contains("active")){
-            setState({isActive1:false, isActive2:true, isActive3:false})
-
+            setState({isActive1:false, isActive2:true, isActive3:false, clickable: false})
+            
             slideLeft(0, 1);
             slideLeft(1, 1);
             scale(1, 1);
@@ -90,8 +90,12 @@ const PopularRecipes = () => {
             fadeOut(0, 1);
             fadeIn(1, 1);
 
+            
+            setTimeout(() => setState({isActive1:false, isActive2:true, isActive3:false, clickable: true}),1200);
+            console.log(state);
+
         }else if(imageList.children[1].classList.contains("active")){
-            setState({isActive1:false, isActive2:false, isActive3:true})
+            setState({isActive1:false, isActive2:false, isActive3:true, clickable: false})
 
             //Image transition
             slideRight(0, 1);
@@ -101,8 +105,11 @@ const PopularRecipes = () => {
             //content transition
             fadeOut(1, 1);
             fadeIn(2, 1);
+
+            setTimeout(() => setState({isActive1:false, isActive2:false, isActive3:true, clickable: true}),1200);
+            console.log(state);
         }else {
-            setState({isActive3:false, isActive1:true, isActive2:false})
+            setState({isActive3:false, isActive1:true, isActive2:false, clickable: false})
 
             //Image transition
             slideLeft(2, 1, 3);
@@ -112,12 +119,15 @@ const PopularRecipes = () => {
             //content transition
             fadeOut(2, 1);
             fadeIn(0, 1);
+
+            setTimeout(() => setState({isActive3:false, isActive1:true, isActive2:false, clickable: true}),1200);
+            console.log(state);
         }
     }
 
     const prevSlide = () => {
         if(imageList.children[0].classList.contains("active")){
-            setState({isActive1:false, isActive3:true, isActive2:false})
+            setState({isActive1:false, isActive3:true, isActive2:false, clickable: false})
             //Image transition
             slideLeft(2, 0, 3);
             slideLeft(2, 1, 2);
@@ -128,8 +138,11 @@ const PopularRecipes = () => {
             fadeOut(0, 1);
             fadeIn(2, 1);;
 
+            setTimeout(() => setState({isActive1:false, isActive3:true, isActive2:false, clickable: true}),1200);
+            console.log(state);
+
         }else if(imageList.children[1].classList.contains("active")){
-            setState({isActive1:true, isActive2:false, isActive3:false})
+            setState({isActive1:true, isActive2:false, isActive3:false, clickable: false})
 
             //Image transition
             slideLeft(0, 0);
@@ -140,8 +153,11 @@ const PopularRecipes = () => {
             //content transtion
             fadeOut(1, 1);
             fadeIn(0, 1);
+
+            setTimeout(() => setState({isActive1:true, isActive2:false, isActive3:false, clickable: true}),1200);
+            console.log(state);
         }else {
-            setState({isActive3:false, isActive2:true, isActive1: false})
+            setState({isActive3:false, isActive2:true, isActive1: false, clickable: false})
             slideLeft(2, 1);
             slideLeft(1, 0, 2);
             slideLeft(1, 1);
@@ -149,6 +165,9 @@ const PopularRecipes = () => {
             //content transtion
             fadeOut(2, 1);
             fadeIn(1, 1);
+
+            setTimeout(() => setState({isActive3:false, isActive2:true, isActive1: false, clickable: true}),1200);
+            console.log(state);
         }
     }
  
@@ -158,7 +177,7 @@ const PopularRecipes = () => {
           <h2 className="popular-title">POPULAR TARİFLER</h2>
           <div ref = {el => {circle = el}} className="popular-section">
               <div className="popular-container">
-                  <div onClick={prevSlide} className="arrows left">
+                  <div onClick={state.clickable ? prevSlide : null} className="arrows left">
                     <span>
                       <MdKeyboardArrowLeft fontSize={30}/>
                     </span>
@@ -204,7 +223,7 @@ const PopularRecipes = () => {
                     </div>
                   </div>
 
-                  <div onClick={nextSlide} className="arrows right">
+                  <div onClick={ state.clickable ? nextSlide : null} className="arrows right">
                     <span>
                       <MdKeyboardArrowRight fontSize={30}/>
                     </span>

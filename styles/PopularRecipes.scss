@@ -16,6 +16,20 @@
             font-family: 'Zilla Slab', serif;
             font-size: 1.8rem;
             font-weight: 600;
+            @media(min-width: $widescreen){
+                margin-left: 200px;
+            }
+            @media(max-width: $widescreen){
+                margin-left: 125px;
+            }
+            @media(max-width: $laptop){
+                margin-left: 55px;
+                font-size: 1.55rem;
+            }
+            @media(max-width: $tablet){
+                font-size: 1.2rem;
+                margin-left: 110px;
+            }
         }
         .popular-section{
             display: flex;
@@ -121,6 +135,12 @@
                                         line-height: 40px;
                                         font-weight: 700;
                                         margin-bottom: 16px;
+                                        @media(max-width: $laptop){
+                                            font-size: 1.3rem;
+                                        }
+                                        @media(max-width: $tablet){
+                                            font-size: 1rem;
+                                        }
                                     }
                                     .recipe{
                                         font-family: 'Zilla Slab', serif;
@@ -129,6 +149,12 @@
                                         line-height: 28px;
                                         color: $secondary;
                                         font-weight: 600;
+                                        @media(max-width: $laptop){
+                                            font-size: 1rem;
+                                        }
+                                        @media(max-width: $tablet){
+                                            font-size: .9rem;
+                                        }
                                     }
                                     .date{
                                         font-family: 'Zilla Slab', serif;
@@ -137,9 +163,15 @@
                                         line-height: 28px;
                                         color: $secondary;
                                         text-align: right;
+                                        @media(max-width: $laptop){
+                                            font-size: 1rem;
+                                        }
+                                        @media(max-width: $tablet){
+                                            font-size: .9rem;
+                                        }
                                     }
                                     @media(max-width: $laptop){
-                                        width: 350px;
+                                        width: 100%;
                                         margin-top: 300px;
                                     }
                                 }
@@ -158,8 +190,14 @@
                 }
             }
         }
+        @media(max-width: $tablet){
+            height: 100px;
+        }
     }
     @media(max-width: $laptop){
         top: 210vh;
+    }
+    @media(max-width: $tablet){
+        top: 155vh;
     }
 }

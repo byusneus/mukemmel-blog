@@ -3,9 +3,9 @@ import Link from "next/link";
 import Head from "../components/Head";
 import dynamic from "next/dynamic";
 import styles from '../styles/Home.scss';
-import { MdAlarm, MdContentPaste, MdKeyboardArrowRight, MdKeyboardArrowLeft } from "react-icons/md";
-import { TweenLite, Power3 } from "gsap";
+import { MdAlarm, MdContentPaste} from "react-icons/md";
 import PopularRecipes from "../components/PopularRecipes";
+import Categories from "../components/Categories";
 
 const popularRecipes = [
   {
@@ -169,87 +169,7 @@ const Home = () => {
         </div>
       </section>
 
-      <section id="categories-section">
-        <div className="container">
-          <div className="categories-container">
-            <h2 className="categories-title">TARİF KATEGORİLERİ</h2>
-            <div className="row-category">
-              <div className="c-box">
-                <div className="c-img">
-                  <img src="https://images.pexels.com/photos/277253/pexels-photo-277253.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" />
-                </div>
-                <span>ÇORBA</span>
-                <div className="recipe-number">
-                  <span>192 Tarif</span>
-                </div>
-              </div>
-              <div className="c-box">
-                <div className="c-img">
-                  <img src="https://images.pexels.com/photos/277253/pexels-photo-277253.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" />
-                </div>
-                <span>ÇORBA</span>
-                <div className="recipe-number">
-                  <span>192 Tarif</span>
-                </div>
-              </div>
-              <div className="c-box">
-                <div className="c-img">
-                  <img src="https://images.pexels.com/photos/277253/pexels-photo-277253.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" />
-                </div>
-                <span>ÇORBA</span>
-                <div className="recipe-number">
-                  <span>192 Tarif</span>
-                </div>
-              </div>
-              <div className="c-box">
-                <div className="c-img">
-                  <img src="https://images.pexels.com/photos/277253/pexels-photo-277253.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" />
-                </div>
-                <span>ÇORBA</span>
-                <div className="recipe-number">
-                  <span>192 Tarif</span>
-                </div>
-              </div>
-              <div className="c-box">
-                <div className="c-img">
-                  <img src="https://images.pexels.com/photos/277253/pexels-photo-277253.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" />
-                </div>
-                <span>ÇORBA</span>
-                <div className="recipe-number">
-                  <span>192 Tarif</span>
-                </div>
-              </div>
-              <div className="c-box">
-                <div className="c-img">
-                  <img src="https://images.pexels.com/photos/277253/pexels-photo-277253.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" />
-                </div>
-                <span>ÇORBA</span>
-                <div className="recipe-number">
-                  <span>192 Tarif</span>
-                </div>
-              </div>
-              <div className="c-box">
-                <div className="c-img">
-                  <img src="https://images.pexels.com/photos/277253/pexels-photo-277253.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" />
-                </div>
-                <span>ÇORBA</span>
-                <div className="recipe-number">
-                  <span>192 Tarif</span>
-                </div>
-              </div>
-              <div className="c-box">
-                <div className="c-img">
-                  <img src="https://images.pexels.com/photos/277253/pexels-photo-277253.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" />
-                </div>
-                <span>ÇORBA</span>
-                <div className="recipe-number">
-                  <span>192 Tarif</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <Categories/>
 
       <PopularRecipes/>
       <style jsx>{styles}</style>
