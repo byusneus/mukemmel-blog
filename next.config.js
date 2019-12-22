@@ -1,4 +1,4 @@
-
+const path = require('path')
 module.exports = {
   webpack: (config, { defaultLoaders }) => {
     config.module.rules.push({
@@ -16,7 +16,7 @@ module.exports = {
     })
 
     return config
-  },
+  }
 }
 
 // const withPlugins = require("next-compose-plugins");
