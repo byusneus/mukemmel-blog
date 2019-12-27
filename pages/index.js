@@ -1,22 +1,29 @@
-import React, { useRef, useEffect } from "react";
-
+import React, { useRef, useEffect, useState } from "react";
 import Head from "../components/Head";
 import styles from '../styles/Home.scss';
-import { MdAlarm, MdContentPaste} from "react-icons/md";
+import { useRouter } from 'next/router'
+import { MdAlarm, MdContentPaste } from "react-icons/md";
 import PopularRecipes from "../components/PopularRecipes";
 import Categories from "../components/Categories";
 import Header from "../components/Header";
+import { TweenLite, Power3} from "gsap";
 
 const Home = () => {
+  const router = useRouter();
+
+  const routePost = () => {
+    router.push("/asdas")
+  }
+
   return (
     <div className="container">
       <Head title="Home" />
 
-      <Header/>
+      <Header />
 
       <section id="banner">
         <div className="row">
-          <div className="box">
+          <div className="box" onClick={routePost}>
             <img src="https://images.pexels.com/photos/1640772/pexels-photo-1640772.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="" />
             <div className="food-info">
               <div className="food-title">
@@ -121,13 +128,13 @@ const Home = () => {
               </div>
             </div>
           </div>
-          
+
         </div>
       </section>
 
-      <Categories/>
+      <Categories />
 
-      <PopularRecipes/>
+      <PopularRecipes />
       <style jsx>{styles}</style>
     </div>
   );
