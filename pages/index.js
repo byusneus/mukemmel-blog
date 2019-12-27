@@ -12,7 +12,10 @@ const Home = () => {
   const router = useRouter();
 
   const routePost = () => {
-    router.push("/asdas")
+    router.push({
+      pathname: '/about',
+      query: { name: 'Deneme' },
+    })
   }
 
   return (
