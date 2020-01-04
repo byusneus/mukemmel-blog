@@ -2,6 +2,11 @@ import { useState, useRef, useEffect } from "react"
 import Head from "./Head"
 import styles from "../styles/layout.scss";
 import profile from "../images/ogr_foto.jpg";
+import facebook from "../images/facebook.png";
+import twitter from "../images/twitter.png";
+import instagram from "../images/instagram.png";
+import youtube from "../images/youtube.png";
+import linkedin from "../images/linkedin.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faFacebook, faInstagram, faYoutube } from "@fortawesome/free-brands-svg-icons"
 import { TweenLite, TimelineLite, Power3} from "gsap";
@@ -14,6 +19,8 @@ const Layout = ( props ) => {
     let profileImage = useRef(null);
     let profileName = useRef(null);
     let navList = useRef(null);
+    let line = useRef(null);
+    let socialList = useRef(null);
 
     const [state, setState] = useState({clicked: false});
 
@@ -21,12 +28,12 @@ const Layout = ( props ) => {
         var tl = new TimelineLite();
         tl.from(bg_addition, .5, {
             height: 0,
-            ease: Power3.easeInOut
+            ease: Power3.easeOut
         })
-        .from(bg, 2, {
+        .from(bg, 1, {
             height: 0,
-            ease: Power3.easeInOut
-        }, "-=1")
+            ease: Power3.easeIn
+        })
         .from(profileImage, 1, {
             opacity: 0,
             y: -40,
@@ -42,6 +49,16 @@ const Layout = ( props ) => {
             y: -50,
             ease: Power3.easeInOut
         }, .2, "-=0.5")
+        .from(line, .5, {
+            opacity: 0,
+            width: 0,
+            ease: Power3.easeOut
+        })
+        .staggerFrom(socialList.children, 1, {
+            opacity: 0,
+            y: -20,
+            ease: Power3.easeInOut
+        }, .1, )
       }, []);
 
     const menuClicked = () => {
@@ -67,8 +84,8 @@ const Layout = ( props ) => {
                         <div ref={(el) => {profileImage = el}} className="profile-box">
                             <img className="profile-img" src={profile} />
                         </div>
-                        <div ref={(el) => {profileName = el}} className="profile-name">Yunus Emre ALPAK</div>
                     </div>
+                    <div ref={(el) => {profileName = el}} className="profile-name">Yunus Emre ALPAK</div>
                     <ul ref={(el) => {navList = el}} className={`nav-list${state.clicked ? " active": ""}`}>
                         <li className="nav-item">
                             ANASAYFA
@@ -88,13 +105,17 @@ const Layout = ( props ) => {
                         </li>
                     </ul>
                     <div className={`social-media${state.clicked ? " active": ""}`}>
-                        <FontAwesomeIcon className="my-icon" icon={faFacebook} size="lg" color="#DBC5A4" />
-                        <div className="spacer"></div>
-                        <FontAwesomeIcon icon={faInstagram} size="lg" color="#DBC5A4"/>
-                        <div className="spacer"></div>
-                        <FontAwesomeIcon icon={faYoutube} size="lg" color="#DBC5A4"/>
+                        <hr ref={(el) => {line = el}} className="line"/>
+                        <div ref={(el) => {socialList = el}} className="social-media-items">
+                            <img src={facebook}/>
+                            <img src={twitter}/>
+                            <img src={instagram}/>
+                            <img src={linkedin}/>
+                            <img src={youtube}/>
+                        </div>
                     </div>
                 </nav>
+                
             </header>
 
             <main>
