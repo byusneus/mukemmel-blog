@@ -4,46 +4,72 @@ import styles from "../styles/layout.scss";
 import profile from "../images/ogr_foto.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faFacebook, faInstagram, faYoutube } from "@fortawesome/free-brands-svg-icons"
-import { TweenLite, Power3} from "gsap";
+import { TweenLite, TimelineLite, Power3} from "gsap";
 
 const Layout = ( props ) => {
 
-    let header = useRef(null);
-    let background = useRef(null);
+    let bg = useRef(null);
+    let bg_addition = useRef(null);
     let sidebar = useRef(null);
+    let profileImage = useRef(null);
+    let profileName = useRef(null);
+    let navList = useRef(null);
+
+    const [state, setState] = useState({clicked: false});
 
     useEffect(() => {
-        TweenLite.from(background, .5, {
+        var tl = new TimelineLite();
+        tl.from(bg_addition, .5, {
             height: 0,
             ease: Power3.easeInOut
         })
-        TweenLite.from(header, .8, {
-            delay: .2,
+        .from(bg, 2, {
             height: 0,
             ease: Power3.easeInOut
+        }, "-=1")
+        .from(profileImage, 1, {
+            opacity: 0,
+            y: -40,
+            ease: Power3.easeInOut
         })
-        TweenLite.from(sidebar, .8, {
-            delay: .6,
+        .from(profileName, 1, {
+            opacity: 0,
+            y: 40,
+            ease: Power3.easeInOut
+        }, "-=1")
+        .staggerFrom(navList.children, 1, {
             opacity: 0,
             y: -50,
-            ease: Power3.easeIn
-        })
+            ease: Power3.easeInOut
+        }, .2, "-=0.5")
       }, []);
+
+    const menuClicked = () => {
+        if (state.clicked) {
+            setState({clicked: false})
+        }else{
+            setState({clicked: true})
+        }
+    }
 
     return (
         <div className="main-content">
-            <Head/>
+            <Head title="Home"/>
 
-            <header ref={(el) => {header = el}}>
-                <div ref={(el) => {background = el}} className="background"></div>
+            <header>
+                <div className={`icon${state.clicked ? " active": ""}`} onClick={menuClicked}>
+                    <div className="hamburger"></div>
+                </div>
+                <div ref={(el) => {bg_addition = el}} className="bg-addition"></div>
+                <div ref={(el) => {bg = el}} className={`bg${state.clicked ? " active": ""}`}></div>
                 <nav ref={(el) => {sidebar = el}} className="sidebar">
                     <div className="profile">
-                        <div className="profile-box">
+                        <div ref={(el) => {profileImage = el}} className="profile-box">
                             <img className="profile-img" src={profile} />
                         </div>
-                        <div className="profile-name">Yunus Emre ALPAK</div>
+                        <div ref={(el) => {profileName = el}} className="profile-name">Yunus Emre ALPAK</div>
                     </div>
-                    <ul className="nav-list">
+                    <ul ref={(el) => {navList = el}} className={`nav-list${state.clicked ? " active": ""}`}>
                         <li className="nav-item">
                             ANASAYFA
                             <hr/>
@@ -61,7 +87,7 @@ const Layout = ( props ) => {
                             <hr/>
                         </li>
                     </ul>
-                    <div className="social-media">
+                    <div className={`social-media${state.clicked ? " active": ""}`}>
                         <FontAwesomeIcon className="my-icon" icon={faFacebook} size="lg" color="#DBC5A4" />
                         <div className="spacer"></div>
                         <FontAwesomeIcon icon={faInstagram} size="lg" color="#DBC5A4"/>

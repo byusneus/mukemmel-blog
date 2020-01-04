@@ -1,9 +1,10 @@
+@import "./variables.scss";
+
 *,
 *::before,
 *::after{
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 .main-content{
@@ -18,9 +19,63 @@ header{
     bottom: 0;
     width: 315px;
     height: 100vh;
-    background-color: #303030;
-    z-index: 10;
-    .background{
+    .icon{
+        position: absolute;
+        display: none;
+        justify-content: center;
+        align-items: center;
+        transform: translate(-50%, -50%);
+        width: 50px;
+        height: 20px;
+        top: 25%;
+        left: 10%;
+        z-index: 10;
+        cursor: pointer;
+        .hamburger{
+            transform: translate(-50%, -50%);
+            width: 30px;
+            height: 3px;
+            top: 20%;
+            left: 10%;
+            background: #939087;
+            box-shadow: 0 2px 5px rgba(0,0,0,.2);
+            transition: .5s;
+        }
+        .hamburger:before,
+        .hamburger:after{
+            content: '';
+            position: absolute;
+            width: 30px;
+            height: 3px;
+            background: #939087;
+            box-shadow: 0 2px 5px rgba(0,0,0,.2);
+            transition: .5s;
+        }
+        .hamburger:before{
+            top: -8px;
+        }
+        .hamburger:after{
+            top: 8px;
+        }
+        @media(max-width: $laptop){
+            display: flex;
+        }
+    }
+    .icon.active{
+        .hamburger{
+            background: rgba(0,0,0,0);
+            box-shadow: 0 2px 5px rgba(0,0,0,0);
+        }
+        .hamburger:before{
+            top: 0;
+            transform: rotate(45deg);
+        }
+        .hamburger:after{
+            top: 0;
+            transform: rotate(135deg);
+        }
+    }
+    .bg-addition{
         position: absolute;
         top: 0;
         left: 0;
@@ -28,16 +83,51 @@ header{
         bottom: 0;
         width: 315px;
         height: 100vh;
-        z-index: -1;
+        background-color: rgb(82, 75, 75);
+        @media(max-width: $laptop){
+            width: 100%;
+            height: 5vh;
+        }
+    }
+    .bg{
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 315px;
+        height: 100vh;
+        background-color: #303030;
+        transition: .2s;
+        @media(max-width: $laptop){
+            width: 100%;
+            height: 5vh;
+        }
+    }
+    .bg.active{
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 315px;
+        height: 100vh;
+        background-color: #303030;
+        transition: .2s;
+        @media(max-width: $laptop){
+            width: 100%;
+            height: 30vh!important;
+        }
     }
     .sidebar{
-        z-index: 10;
+        
         display: flex;
         height: 100vh;
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
         .profile{
+            position: relative;
             margin-top: 50px;
             display: flex;
             flex-direction: column;
@@ -57,6 +147,9 @@ header{
                     border-radius: 50%;
                     box-shadow: 0 12px 25px -2px black;
                 }
+            }
+            @media(max-width: $laptop){
+                display: none;
             }
             
         }
@@ -90,6 +183,12 @@ header{
                     width: 100%;
                 }
             }
+            @media(max-width: $laptop){
+                display: none;
+            }
+        }
+        .nav-list.active{
+            display: flex;
         }
         .social-media{
             margin-bottom: 20px;
@@ -99,16 +198,29 @@ header{
             .spacer{
                 padding: 10px;
             }
+            @media(max-width: $laptop){
+                display: none;
+            }
         }
+        .social-media.active{
+            display: flex;
+        }
+        @media(max-width: $laptop){
+            justify-content: center;
+            height: 30vh;
+        }
+    }
+    @media(max-width: $laptop){
+        width: 100%;
+        height: 10vh;
     }
 }
 
 main{
     width: 100%;
     margin-left: 315px;
-    .box{
-        width: 300px;
-        height: 300px;
-        background-color: #000000;
+    @media(max-width: $laptop){
+        margin-top: 5vh;
+        margin-left: 0;
     }
 }
