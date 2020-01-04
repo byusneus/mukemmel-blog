@@ -1,25 +1,24 @@
 import React from "react";
-import Head from "next/head";
 import firebase from "../common/firebase";
 import firestore from "../common/firestore";
 
 const BlogPost = ({ feed, query }) => {
-  console.log(feed);
+    const state = {
+        description: feed.title
+    }
+    
     return (
       <div className="container">
-        <Head>
-          <title>Home</title>
-          <link rel="icon" href="/favicon.ico" />
-        </Head>
         <h2>{feed.slug}</h2>
         <h2>{feed.title}</h2>
+        <div dangerouslySetInnerHTML={{__html: state.description}}></div>
       </div>
     )
 
 } 
 
 BlogPost.getInitialProps = async ({ req, query }) => {
-    const result = await firestore.collection("tarifler").where("slug", "==", query.name).get();
+    const result = await firestore.collection("tarifler").where("slug", "==", query.slug).get();
 
     const newFeeds = [];
     result.forEach(doc => {
@@ -28,7 +27,7 @@ BlogPost.getInitialProps = async ({ req, query }) => {
 
     return {
       feed: newFeeds[0],
-      query: query.name
+      query: query.slug
     }
 };
 
