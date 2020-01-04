@@ -2,6 +2,7 @@ import React, { useRef, useEffect, useState } from "react";
 import { useRouter } from 'next/router'
 import { MdAlarm, MdContentPaste } from "react-icons/md";
 import { TweenLite, Power3} from "gsap";
+import Layout from "../components/Layout";
 
 const Home = () => {
   const router = useRouter();
@@ -14,10 +15,9 @@ const Home = () => {
   }
 
   return (
-    <div className="container">
-      <h2>Tekrar Başlayalım</h2>
-      {/* <style jsx>{styles}</style> */}
-    </div>
+    <Layout>
+      <h2>Merhaba</h2>
+    </Layout>
   );
 };
 

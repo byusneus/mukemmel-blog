@@ -1,5 +1,5 @@
-const path = require('path')
-module.exports = {
+const withImages = require('next-images')
+module.exports = withImages({
   webpack: (config, { defaultLoaders }) => {
     config.module.rules.push({
       test: /\.scss$/,
@@ -17,7 +17,7 @@ module.exports = {
 
     return config
   }
-}
+})
 
 // const withPlugins = require("next-compose-plugins");
 // const withCSS = require("@zeit/next-css");

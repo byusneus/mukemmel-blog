@@ -1,0 +1,114 @@
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main-content{
+    display: flex;
+}
+
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 315px;
+    height: 100vh;
+    background-color: #303030;
+    z-index: 10;
+    .background{
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 315px;
+        height: 100vh;
+        z-index: -1;
+    }
+    .sidebar{
+        z-index: 10;
+        display: flex;
+        height: 100vh;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        .profile{
+            margin-top: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            .profile-name{
+                margin-top: 15px;
+                font-family: 'Zilla Slab', serif;
+                font-size: 1.4rem;
+                font-weight: 600;
+                color: #939087;
+            }
+            .profile-box{
+                text-align: center;
+                .profile-img{
+                    width: 50%;
+                    border-radius: 50%;
+                    box-shadow: 0 12px 25px -2px black;
+                }
+            }
+            
+        }
+        .nav-list{
+            display: flex;
+            width: 50%;
+            height: 200px;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #939087;
+            letter-spacing: 2px;
+            list-style-type: none;
+            .nav-item{
+                font-family: 'Zilla Slab', serif;
+                font-size: 15px;
+                font-weight: 600;
+                margin-bottom: 20px;
+                hr{
+                    transition:width .3s  ease-in-out;
+                    width: 0;
+                    margin-right: 5px;
+                    padding: 1px 0;
+                    border: none;
+                    background-color: #939087;
+                }
+            }
+            .nav-item:hover{
+                cursor: pointer;
+                hr{
+                    width: 100%;
+                }
+            }
+        }
+        .social-media{
+            margin-bottom: 20px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            .spacer{
+                padding: 10px;
+            }
+        }
+    }
+}
+
+main{
+    width: 100%;
+    margin-left: 315px;
+    .box{
+        width: 300px;
+        height: 300px;
+        background-color: #000000;
+    }
+}
