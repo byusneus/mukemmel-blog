@@ -23,42 +23,45 @@ const Layout = ( props ) => {
     let socialList = useRef(null);
 
     const [state, setState] = useState({clicked: false});
+    const [count, setCount] = useState({value: 0})
 
     useEffect(() => {
         var tl = new TimelineLite();
-        tl.from(bg_addition, .5, {
-            height: 0,
-            ease: Power3.easeOut
-        })
-        .from(bg, 1, {
-            height: 0,
-            ease: Power3.easeIn
-        })
-        .from(profileImage, 1, {
-            opacity: 0,
-            y: -40,
-            ease: Power3.easeInOut
-        })
-        .from(profileName, 1, {
-            opacity: 0,
-            y: 40,
-            ease: Power3.easeInOut
-        }, "-=1")
-        .staggerFrom(navList.children, 1, {
-            opacity: 0,
-            y: -50,
-            ease: Power3.easeInOut
-        }, .2, "-=0.5")
-        .from(line, .5, {
-            opacity: 0,
-            width: 0,
-            ease: Power3.easeOut
-        })
-        .staggerFrom(socialList.children, 1, {
-            opacity: 0,
-            y: -20,
-            ease: Power3.easeInOut
-        }, .1, )
+        if(count.value == 0){
+            tl.from(bg_addition, .5, {
+                height: 0,
+                ease: Power3.easeOut
+            })
+            .from(bg, 1, {
+                height: 0,
+                ease: Power3.easeIn
+            })
+            .from(profileImage, 1, {
+                opacity: 0,
+                y: -40,
+                ease: Power3.easeInOut
+            })
+            .from(profileName, 1, {
+                opacity: 0,
+                y: 40,
+                ease: Power3.easeInOut
+            }, "-=1")
+            .staggerFrom(navList.children, 1, {
+                opacity: 0,
+                y: -50,
+                ease: Power3.easeInOut
+            }, .2, "-=0.5")
+            .from(line, .5, {
+                opacity: 0,
+                width: 0,
+                ease: Power3.easeOut
+            })
+            .staggerFrom(socialList.children, 1, {
+                opacity: 0,
+                y: -20,
+                ease: Power3.easeInOut
+            }, .1, )
+        }
       }, []);
 
     const menuClicked = () => {
@@ -68,7 +71,7 @@ const Layout = ( props ) => {
             setState({clicked: true})
         }
     }
-
+    console.log(props);
     return (
         <div className="main-content">
             <Head title="Home"/>

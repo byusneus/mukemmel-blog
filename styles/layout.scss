@@ -216,7 +216,7 @@ header{
                 display: flex;
                 justify-content: space-evenly;
                 img{
-                    width: 10%;
+                    width: 8%;
                     filter:saturate(0.2);
                     @media(max-width: $laptop){
                         width: 3%;

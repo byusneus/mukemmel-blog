@@ -1,40 +1,136 @@
 
 .main-page{
     display: flex;
-    padding: 20px;
-    .box{
-        width: 110px;
-        height: 110px;
-        transform: rotateZ(-45deg);
-        transition: .5s;
-        &:nth-child(1){
-            background: red;
+    flex-direction: column;
+    padding-top: 100px;
+    padding-left: 100px;
+    padding-right: 100px;
+    .bg{
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background: #E5E3D6;
+        z-index: -10;
+    }
+    .blogs{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        .blog-box{
+            width: 300px;
+            height: 300px;
+            background: #303030;
+            transform: rotateZ(-45deg);
+            transition: .5s;
+            img{
+                width: 300px;
+                height: 300px;
+                object-fit: cover;
+                filter:saturate(0);
+                transition: .5s;
+            }
+            .blog-summary{
+                opacity: 0;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                align-items: center;
+                transition: .1s;
+                text-align: center;
+                p{
+                    color: #908E87;
+                }
+                .btn{
+                    width: 120px;
+                    height: 30px;
+                    background: none;
+                    border: 4px solid;
+                    color: #939087;
+                    font-family: 'Zilla Slab', serif;
+                    font-weight: 600;
+                    font-size: 12px;
+                    text-transform: uppercase;
+                    cursor: pointer;
+                    position: relative;
+                }
+                .btn::before,.btn::after{
+                    content: "";
+                    position: absolute;
+                    width: 4px;
+                    height: 4px;
+                    background: #fff;
+                    transform: skewX(50deg);
+                    transition: .4s linear;
+                }
+                .btn::before{
+                    top: -4px;
+                    left: 10%;
+                }
+                .btn::after{
+                    bottom: -4px;
+                    right: 10%;
+                }
+                .btn:hover::before{
+                    left: 80%;
+                }
+                .btn:hover::after{
+                    right: 80%;
+                }
+            }
         }
-        &:nth-child(2){
-            background: blue;
-        }
-        &:nth-child(3){
-            background: black;
-        }
-        &:nth-child(4){
-            background: pink;
-        }
-        &:nth-child(5){
-            background: purple;
-        }
-        &:nth-child(6){
-            background: yellow;
-        }
-        &:nth-child(7){
-            background: green;
-        }
-        &:nth-child(8){
-            background: greenyellow;
+        .blog-box:hover{
+            z-index: 10;
+            transform: rotateZ(0);
+            opacity: 1;
+            box-shadow: 0 12px 25px -2px black;
+            img{
+                width: 300px;
+                height: 200px;
+                filter:saturate(1);
+            }
+            .blog-summary{
+                opacity: 1;
+                .blog-title{
+                    text-align: center;
+                }
+            }
         }
     }
-    .box:hover{
-        transform: rotateZ(0);
-        margin-left: 50px;
-        margin-right: 50px;
+    .pagination{
+        display: flex;
+        position: absolute;
+        left: 50%;
+        right: 0;
+        bottom: 5%;
+        .page{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 20px;
+            width: 25px;
+            height: 25px;
+            border: 1px solid #303030;
+            transition: .3s;
+            img{
+                width: 12px;
+                height: 12px;
+            }
+            &:first-child{
+                transform: rotate(180deg);
+                border: none;
+                padding: 2px;
+            }
+            &:last-child{
+                border: none;
+                padding: 1px;
+            }
+        }
+        .page:hover{
+            cursor: pointer;
+            background: #939087;
+            color: #fff;
+        }
     }
 }
