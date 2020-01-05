@@ -248,11 +248,3 @@ header{
     }
 }
 
-main{
-    width: 100%;
-    margin-left: 315px;
-    @media(max-width: $laptop){
-        margin-top: 5vh;
-        margin-left: 0;
-    }
-}

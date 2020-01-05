@@ -121,10 +121,6 @@ const Layout = ( props ) => {
                 
             </header>
 
-            <main>
-                {props.children}
-            </main>
-
             <style jsx>{styles}</style>
         </div>
     )

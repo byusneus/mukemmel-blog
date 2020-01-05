@@ -5,9 +5,7 @@ import Layout from "../components/Layout";
 const Dashboard = () => {
 
     return (
-            <Layout>
                 <div>Admin Page </div>
-            </Layout>
     )
 }
 

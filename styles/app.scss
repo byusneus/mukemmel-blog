@@ -1,0 +1,9 @@
+@import "./variables.scss";
+
+main{
+    margin-left: 315px;
+    @media(max-width: $laptop){
+        margin-top: 5vh;
+        margin-left: 0;
+    }
+}
