@@ -2,7 +2,7 @@ import React, { useRef, useEffect, useState } from "react";
 import { useRouter } from 'next/router'
 import { MdAlarm, MdContentPaste } from "react-icons/md";
 import { TweenLite, Power3 } from "gsap";
-import Layout from "../components/Layout";
+import { motion } from "framer-motion";
 import styles from "../styles/home.scss";
 import computer from "../images/computer.jpg"
 import code from "../images/code.png"
@@ -36,75 +36,78 @@ const Home = () => {
   }
 
   return (
-    <div className="main-page">
-      <div className="bg"></div>
-      <div ref={el => { blogList = el }} className="blogs">
-        <div className="blog-box">
-          <img src={computer} />
-          <div className="blog-summary">
-            <p>BLOG TITLE SAMPLE</p>
-            <button className="btn" onClick={routePost}>Devamını Oku</button>
+    <motion.div initial='initial' animate='animate' exit={{ opacity: 0 }}>
+      <div className="main-page">
+        <div ref={el => { blogList = el }} className="blogs">
+          <div className="blog-box">
+            <img src={computer} />
+            <div className="blog-summary">
+              <p>BLOG TITLE SAMPLE</p>
+              <button className="btn" onClick={routePost}>Devamını Oku</button>
+            </div>
+          </div>
+          <div className="blog-box">
+            <img src={code} />
+            <div className="blog-summary">
+              <p>BLOG TITLE SAMPLE</p>
+              <button className="btn">Devamını Oku</button>
+            </div>
+          </div>
+          <div className="blog-box">
+            <img src={code2} />
+            <div className="blog-summary">
+              <p>BLOG TITLE SAMPLE</p>
+              <button className="btn">Devamını Oku</button>
+            </div>
+          </div>
+          <div className="blog-box">
+            <img src={computer} />
+            <div className="blog-summary">
+              <p>BLOG TITLE SAMPLE</p>
+              <button className="btn">Devamını Oku</button>
+            </div>
+          </div>
+          <div className="blog-box">
+            <img src={code2} />
+            <div className="blog-summary">
+              <p>BLOG TITLE SAMPLE</p>
+              <button className="btn">Devamını Oku</button>
+            </div>
+          </div>
+          <div className="blog-box">
+            <img src={code2} />
+            <div className="blog-summary">
+              <p>BLOG TITLE SAMPLE</p>
+              <button className="btn">Devamını Oku</button>
+            </div>
+          </div>
+          <div className="blog-box">
+            <img src={code2} />
+            <div className="blog-summary">
+              <p>BLOG TITLE SAMPLE</p>
+              <button className="btn">Devamını Oku</button>
+            </div>
+          </div>
+          <div className="blog-box">
+            <img src={code2} />
+            <div className="blog-summary">
+              <p>BLOG TITLE SAMPLE</p>
+              <button className="btn">Devamını Oku</button>
+            </div>
           </div>
         </div>
-        <div className="blog-box">
-          <img src={code} />
-          <div className="blog-summary">
-            <p>BLOG TITLE SAMPLE</p>
-            <button className="btn">Devamını Oku</button>
-          </div>
+        <div ref={el => { pagination = el }} className="pagination">
+          <div className="page"><img src={next} /></div>
+          <div className="page">1</div>
+          <div className="page">2</div>
+          <div className="page">3</div>
+          <div className="page"><img src={next} /></div>
         </div>
-        <div className="blog-box">
-          <img src={code2} />
-          <div className="blog-summary">
-            <p>BLOG TITLE SAMPLE</p>
-            <button className="btn">Devamını Oku</button>
-          </div>
-        </div>
-        <div className="blog-box">
-          <img src={computer} />
-          <div className="blog-summary">
-            <p>BLOG TITLE SAMPLE</p>
-            <button className="btn">Devamını Oku</button>
-          </div>
-        </div>
-        <div className="blog-box">
-          <img src={code2} />
-          <div className="blog-summary">
-            <p>BLOG TITLE SAMPLE</p>
-            <button className="btn">Devamını Oku</button>
-          </div>
-        </div>
-        <div className="blog-box">
-          <img src={code2} />
-          <div className="blog-summary">
-            <p>BLOG TITLE SAMPLE</p>
-            <button className="btn">Devamını Oku</button>
-          </div>
-        </div>
-        <div className="blog-box">
-          <img src={code2} />
-          <div className="blog-summary">
-            <p>BLOG TITLE SAMPLE</p>
-            <button className="btn">Devamını Oku</button>
-          </div>
-        </div>
-        <div className="blog-box">
-          <img src={code2} />
-          <div className="blog-summary">
-            <p>BLOG TITLE SAMPLE</p>
-            <button className="btn">Devamını Oku</button>
-          </div>
-        </div>
-      </div>
-      <div ref={el => { pagination = el }} className="pagination">
-        <div className="page"><img src={next} /></div>
-        <div className="page">1</div>
-        <div className="page">2</div>
-        <div className="page">3</div>
-        <div className="page"><img src={next} /></div>
+
       </div>
       <style jsx>{styles}</style>
-    </div>
+    </motion.div>
+
 
   );
 };
