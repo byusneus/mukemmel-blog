@@ -9,10 +9,11 @@ class MyApp extends App {
         const { Component, pageProps, router } = this.props;
         const spring = {
             type: "spring",
-            damping: 20,
-            stiffness: 100,
+            damping: 100,
+            stiffness: 600,
             when: "afterChildren"
           };
+        console.log(pageProps);
         // <Component/> returns the component it self
         // pageProps returns the props you use to in that component. It can be any data
         // router.route returns the route your component lives on. So in our case it will be '/' or '/products/[id]'
@@ -20,15 +21,15 @@ class MyApp extends App {
         return (
             <div>
                 <div className="full-bg"></div>
-                <Layout />
+                {router.route != "/admin" ? <Layout /> : null}
                 <main>
                     <AnimatePresence exitBeforeEnter>
                         <motion.div
                             transition={spring}
                             key={router.pathname}
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            exit={{ x: 300, opacity: 0 }}
+                            initial={{opacity: 0 }}
+                            animate={{opacity: 1 }}
+                            exit={{opacity: 0 }}
                             id="page-transition-container"
                         >
                             <Component {...pageProps} key={router.route} />

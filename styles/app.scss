@@ -1,19 +1,12 @@
 @import "./variables.scss";
 
 .full-bg{
-    position: absolute;
+    position: fixed;
         top: 0;
         left: 0;
         bottom: 0;
         right: 0;
+        height: 100vh;
         background: #E5E3D6;
         z-index: -10;
-}
-
-main{
-    margin-left: 315px;
-    @media(max-width: $laptop){
-        margin-top: 5vh;
-        margin-left: 0;
-    }
 }

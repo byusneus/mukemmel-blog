@@ -22,6 +22,9 @@ header{
     bottom: 0;
     width: 315px;
     height: 100vh;
+    &.active{
+        z-index: 50;
+    }
     .icon{
         position: absolute;
         display: none;
@@ -60,22 +63,22 @@ header{
         .hamburger:after{
             top: 8px;
         }
+        &.active{
+            .hamburger{
+                background: rgba(0,0,0,0);
+                box-shadow: 0 2px 5px rgba(0,0,0,0);
+            }
+            .hamburger:before{
+                top: 0;
+                transform: rotate(45deg);
+            }
+            .hamburger:after{
+                top: 0;
+                transform: rotate(135deg);
+            }
+        }
         @media(max-width: $laptop){
             display: flex;
-        }
-    }
-    .icon.active{
-        .hamburger{
-            background: rgba(0,0,0,0);
-            box-shadow: 0 2px 5px rgba(0,0,0,0);
-        }
-        .hamburger:before{
-            top: 0;
-            transform: rotate(45deg);
-        }
-        .hamburger:after{
-            top: 0;
-            transform: rotate(135deg);
         }
     }
     .bg-addition{

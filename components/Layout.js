@@ -15,7 +15,7 @@ const Layout = ( props ) => {
 
     let bg = useRef(null);
     let bg_addition = useRef(null);
-    let sidebar = useRef(null);
+    let menu_button = useRef(null);
     let profileImage = useRef(null);
     let profileName = useRef(null);
     let navList = useRef(null);
@@ -45,12 +45,17 @@ const Layout = ( props ) => {
                 opacity: 0,
                 y: 40,
                 ease: Power3.easeInOut
-            }, "-=1")
+            }, "-=.5")
+            .from(menu_button, 1, {
+                opacity: 0,
+                y: -40,
+                ease: Power3.easeInOut
+            }, "-=.5")
             .staggerFrom(navList.children, 1, {
                 opacity: 0,
                 y: -50,
                 ease: Power3.easeInOut
-            }, .2, "-=0.5")
+            }, .1, "-=1")
             .from(line, .5, {
                 opacity: 0,
                 width: 0,
@@ -71,18 +76,17 @@ const Layout = ( props ) => {
             setState({clicked: true})
         }
     }
-    console.log(props);
+
     return (
         <div className="main-content">
             <Head title="Home"/>
-
-            <header>
-                <div className={`icon${state.clicked ? " active": ""}`} onClick={menuClicked}>
+            <header className={`${state.clicked ? "active": ""}`}>
+                <div ref={el => {menu_button = el}} className={`icon${state.clicked ? " active": ""}`} onClick={menuClicked}>
                     <div className="hamburger"></div>
                 </div>
                 <div ref={(el) => {bg_addition = el}} className="bg-addition"></div>
                 <div ref={(el) => {bg = el}} className={`bg${state.clicked ? " active": ""}`}></div>
-                <nav ref={(el) => {sidebar = el}} className="sidebar">
+                <nav className="sidebar">
                     <div className="profile">
                         <div ref={(el) => {profileImage = el}} className="profile-box">
                             <img className="profile-img" src={profile} />

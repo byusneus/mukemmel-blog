@@ -1,0 +1,41 @@
+@import "./variables.scss";
+
+.blog-main{
+    z-index: -1;
+    margin-left: 315px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .blog-container{
+        position: relative;
+        top: 250px;
+        width: 75%;
+        padding: 40px;
+        background: #F1EBDA;
+        box-shadow: 0 12px 25px -2px black;
+        .box{
+            width: 200px;
+            height: 300px;
+            margin-bottom: 10px;
+            background: #fff;
+        }
+    }
+    .blog-img{
+        z-index: -20;
+        position: fixed;
+        top: -4%;
+        width: 105%;
+        height: 100px;
+        img{
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+    }
+    @media(max-width: $laptop){
+        margin-top: 5vh;
+        margin-left: 0;
+    }
+}

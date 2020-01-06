@@ -1,15 +1,16 @@
+@import "./variables.scss";
 
 .main-page{
     display: flex;
+    margin-left: 315px;
     flex-direction: column;
-    padding-top: 100px;
-    padding-left: 100px;
-    padding-right: 100px;
+    padding: 100px 100px 0px 100px;
     .blogs{
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
         .blog-box{
+            position: relative;
             width: 300px;
             height: 300px;
             background: #303030;
@@ -21,19 +22,37 @@
                 object-fit: cover;
                 filter:saturate(0);
                 transition: .5s;
+                @media(max-width: $laptop){
+                    filter:saturate(1);
+                    width: 200px;
+                    height: 120px;
+                }
             }
             .blog-summary{
+                z-index: -1;
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: 20%;
                 opacity: 0;
                 display: flex;
                 flex-direction: column;
                 justify-content: space-around;
                 align-items: center;
-                transition: .1s;
+                transition: .5s;
                 text-align: center;
                 p{
                     color: #908E87;
+                    @media(max-width: $laptop){
+                        font-family: 'Zilla Slab', serif;
+                        font-weight: 600;
+                        font-size: 14px;
+                    }
                 }
                 .btn{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
                     width: 120px;
                     height: 30px;
                     background: none;
@@ -45,6 +64,13 @@
                     text-transform: uppercase;
                     cursor: pointer;
                     position: relative;
+                    text-decoration: none;
+                    @media(max-width: $laptop){
+                        width: 90px;
+                        height: 20px;
+                        font-size: 9px;
+                        border: 2px solid;
+                    }
                 }
                 .btn::before,.btn::after{
                     content: "";
@@ -54,6 +80,9 @@
                     background: #fff;
                     transform: skewX(50deg);
                     transition: .4s linear;
+                    @media(max-width: $laptop){
+                        display: none;
+                    }
                 }
                 .btn::before{
                     top: -4px;
@@ -69,6 +98,18 @@
                 .btn:hover::after{
                     right: 80%;
                 }
+                @media(max-width: $laptop){
+                    z-index: 5;
+                    opacity: 1;
+                    bottom: 5%;
+                }
+            }
+            @media(max-width: $laptop){
+                transform: none;
+                margin: 10px;
+                width: 200px;
+                height: 200px;
+                box-shadow: 0 12px 25px -2px black;
             }
         }
         .blog-box:hover{
@@ -80,12 +121,21 @@
                 width: 300px;
                 height: 200px;
                 filter:saturate(1);
+                @media(max-width: $laptop){
+                    width: 200px;
+                    height: 120px;
+                }
             }
             .blog-summary{
                 opacity: 1;
+                bottom: 5%;
                 .blog-title{
                     text-align: center;
                 }
+            }
+            @media(max-width: $laptop){
+                z-index: inherit;
+                transform: none;
             }
         }
     }
@@ -123,5 +173,13 @@
             background: #939087;
             color: #fff;
         }
+        @media(max-width: $laptop){
+            left: 40%;
+        }
+    }
+    @media(max-width: $laptop){
+        margin-top: 5vh;
+        margin-left: 0;
+        padding: 50px 50px 0px 50px;
     }
 }

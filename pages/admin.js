@@ -20,11 +20,13 @@ const Admin = () =>  {
     }
 
     return(
-        <div className="container">
-            Admin Login PAge<br/>
+        <div className="admin-container">
+            asdasdsad
+            {/* Admin Login PAge<br/>
             <input className="form-check-input" onChange={event => setEmail(event.target.value)} />
             <input className="form-check-input" onChange={event => setPassword(event.target.value)} /><br/>
-            <button className="btn btn-primary" onClick={login}>Login</button>
+            <button className="btn btn-primary" onClick={login}>Login</button> */}
+
         </div>
     )
 }
