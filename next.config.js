@@ -1,5 +1,8 @@
 const withImages = require('next-images')
 module.exports = withImages({
+  env: {
+    development: 'http://localhost:3000',
+  },
   webpack: (config, { defaultLoaders }) => {
     config.module.rules.push({
       test: /\.scss$/,

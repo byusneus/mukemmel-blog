@@ -5,8 +5,12 @@ import firestore from "../common/firestore";
 import computer from "../images/computer.jpg";
 import styles from "../styles/blog.scss"
 import { TweenLite, Power3 } from "gsap";
+import facebook from "../images/facebook.png";
+import twitter from "../images/twitter.png";
+import reddit from "../images/reddit.png";
+import linkedin from "../images/linkedin.png";
 
-const BlogPost = ({ feed, query }) => {
+const BlogPost = ({ feed, blogId }) => {
   const state = {
     description: feed.title
   }
@@ -35,11 +39,19 @@ const BlogPost = ({ feed, query }) => {
         <img src={computer} />
       </div>
       <div ref={el => {blogBg = el}} className="blog-container">
-        <div dangerouslySetInnerHTML={{ __html: state.description }}></div>
-        <div className="box"></div>
-        <div className="box"></div>
-        <div className="box"></div>
-        <div className="box"></div>
+        <div className="blog-content">
+          <div dangerouslySetInnerHTML={{ __html: state.description }}></div>
+          <div className="box"></div>
+          <div className="box"></div>
+          <div className="box"></div>
+          <div className="box"></div>
+        </div>
+        <div className="share">
+            <a className="share-btn" target="_blank" href={`https://www.facebook.com/sharer/sharer.php?u=${process.env.development}/${blogId}`}><img src={facebook}/></a>
+            <a className="share-btn" target="_blank" href={`https://twitter.com/share?url=${process.env.development}/${blogId}&text=${feed.slug}via=@yunus_alpak`}><img src={twitter}/></a>
+            <a className="share-btn" target="_blank" href={`https://reddit.com/submit?url=${process.env.development}/${blogId}&title=${feed.slug}`}><img src={reddit}/></a>
+            <a className="share-btn" target="_blank" href={`https://www.linkedin.com/shareArticle?url=${process.env.development}/${blogId}&title=${feed.slug}`}><img src={linkedin}/></a>
+        </div>
       </div>
       <style jsx>{styles}</style>
     </div>
@@ -57,7 +69,8 @@ BlogPost.getInitialProps = async ({ req, query }) => {
   })
 
   return {
-    feed: newFeeds[0]
+    feed: newFeeds[0],
+    blogId: query.blogId
   }
 };
 

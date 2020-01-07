@@ -8,20 +8,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    .blog-container{
-        position: relative;
-        top: 250px;
-        width: 75%;
-        padding: 40px;
-        background: #F1EBDA;
-        box-shadow: 0 12px 25px -2px black;
-        .box{
-            width: 200px;
-            height: 300px;
-            margin-bottom: 10px;
-            background: #fff;
-        }
-    }
     .blog-img{
         z-index: -20;
         position: fixed;
@@ -32,6 +18,78 @@
             width: 100%;
             height: 400px;
             object-fit: cover;
+        }
+    }
+    .blog-container{
+        position: relative;
+        top: 250px;
+        width: 75%;
+        padding: 40px;
+        background: #e9e9e9;
+        box-shadow: 0 12px 25px -2px black;
+        .box{
+            width: 200px;
+            height: 300px;
+            margin-bottom: 10px;
+            background: #fff;
+        }
+        .share{
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            .share-btn{
+                cursor: pointer;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 50px;
+                height: 50px;
+                background: #f1f1f1;
+                margin: 10px;
+                border-radius: 30%;
+                box-shadow: 0 5px 15px -5px #000000;
+                color: #3498db;
+                overflow: hidden;
+                position: relative;
+                img{
+                    width: 35%;
+                    filter: saturate(0);
+                    transition: .2s linear;
+                }
+                &:hover{
+                    img{
+                        width: 45%;
+                        filter: saturate(1);
+                    }
+                }
+                &::before{
+                    content: "";
+                    position: absolute;
+                    width: 120%;
+                    height: 120%;
+                    background: #303030;
+                    transform: rotate(45deg);
+                    left: -110%;
+                    top: 90%;
+                }
+                &:hover::before{
+                    animation: aaa .7s 1;
+                    top: -10%;
+                    left: -10%;
+                }
+                @keyframes aaa {
+                    0%{
+                        left: -110%;
+                        top: 90%;
+                    }50%{
+                        left: 10%;
+                        top: -30%;
+                    }100%{
+                        top: -10%;
+                        left: -10%;
+                    }
+                }
+            }
         }
     }
     @media(max-width: $laptop){
