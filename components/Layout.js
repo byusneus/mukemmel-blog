@@ -1,5 +1,4 @@
 import { useState, useRef, useEffect } from "react"
-import Head from "./Head"
 import styles from "../styles/layout.scss";
 import profile from "../images/ogr_foto.jpg";
 import facebook from "../images/facebook.png";
@@ -79,7 +78,6 @@ const Layout = ( props ) => {
 
     return (
         <div className="main-content">
-            <Head title="Home"/>
             <header className={`${state.clicked ? "active": ""}`}>
                 <div ref={el => {menu_button = el}} className={`icon${state.clicked ? " active": ""}`} onClick={menuClicked}>
                     <div className="hamburger"></div>

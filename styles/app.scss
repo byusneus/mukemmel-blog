@@ -1,12 +1,17 @@
 @import "./variables.scss";
 
+body{
+    margin: 0;
+}
+
 .full-bg{
     position: fixed;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        right: 0;
-        height: 100vh;
-        background: #E5E3D6;
-        z-index: -10;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 100vh;
+    background: #E5E3D6;
+    background:linear-gradient(to left bottom, #e9e9e9, #ebebeb, #d6d6d6, #b1b1b1, #505050);
+    z-index: -10;
 }

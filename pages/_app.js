@@ -1,5 +1,6 @@
 import React from "react";
 import App from "next/app";
+import Head from "../components/Head"
 import Layout from "../components/Layout";
 import { AnimatePresence, motion } from "framer-motion";
 import styles from "../styles/app.scss"
@@ -20,6 +21,7 @@ class MyApp extends App {
         // exitBeforeEnter: AnimatePresence will only render one component at a time. The exiting component will finished its exit animation before the entering component is rendered
         return (
             <div>
+                <Head title="Home"/>
                 <div className="full-bg"></div>
                 {router.route != "/admin" ? <Layout /> : null}
                 <main>

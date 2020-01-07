@@ -16,10 +16,11 @@ const Home = () => {
   let pagination = useRef(null);
 
   useEffect(() => {
-    TweenLite.staggerFrom(blogList.children, 1, {
+    TweenLite.staggerFrom(blogList.children, 1.5, {
+      delay: .3,
       opacity: 0,
       ease: Power3.easeIn
-    }, .1)
+    }, .3)
       .staggerFrom(pagination.children, .5, {
         opacity: 0,
         y: -30,
