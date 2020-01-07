@@ -1,7 +1,7 @@
 
 import firebase from "../common/firebase";
-import Layout from "../components/Layout";
 import { motion } from "framer-motion";
+import styles from "../styles/dashboard.scss"
 
 let easing = [0.6, -0.05, 0.01, 0.99];
 
@@ -31,11 +31,12 @@ const fadeInUp = {
 
 const Dashboard = () => {
 
-    return (
-        
-            <div>Admin Page </div>
-                
-    )
+  return (
+    <div className="main-content">
+      Admin
+    <style jsx>{styles}</style>
+    </div>
+  )
 }
 
 export default Dashboard;

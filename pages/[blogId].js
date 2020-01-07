@@ -1,4 +1,5 @@
 import React, { useRef, useEffect, useState } from "react";
+import Head from "../components/Head";
 import firebase from "../common/firebase";
 import firestore from "../common/firestore";
 import computer from "../images/computer.jpg";
@@ -27,7 +28,9 @@ const BlogPost = ({ feed, query }) => {
   }, []);
 
   return (
-    <div className="blog-main">
+    <div>
+      <Head title={feed.slug}/>
+      <div className="blog-main">
       <div ref={el => {blogImage = el}} className="blog-img">
         <img src={computer} />
       </div>
@@ -39,6 +42,7 @@ const BlogPost = ({ feed, query }) => {
         <div className="box"></div>
       </div>
       <style jsx>{styles}</style>
+    </div>
     </div>
   )
 

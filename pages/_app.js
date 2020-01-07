@@ -1,7 +1,8 @@
 import React from "react";
 import App from "next/app";
 import Head from "../components/Head"
-import Layout from "../components/Layout";
+import Sidebar from "../components/Sidebar";
+import AdminSidebar from "../components/AdminSidebar";
 import { AnimatePresence, motion } from "framer-motion";
 import styles from "../styles/app.scss"
 
@@ -14,7 +15,6 @@ class MyApp extends App {
             stiffness: 600,
             when: "afterChildren"
           };
-        console.log(pageProps);
         // <Component/> returns the component it self
         // pageProps returns the props you use to in that component. It can be any data
         // router.route returns the route your component lives on. So in our case it will be '/' or '/products/[id]'
@@ -23,7 +23,8 @@ class MyApp extends App {
             <div>
                 <Head title="Home"/>
                 <div className="full-bg"></div>
-                {router.route != "/admin" ? <Layout /> : null}
+                {router.route != "/admin" && router.route != "/dashboard" ? <Sidebar /> : null}
+                {router.route === "/dashboard" ? <AdminSidebar /> : null}
                 <main>
                     <AnimatePresence exitBeforeEnter>
                         <motion.div
