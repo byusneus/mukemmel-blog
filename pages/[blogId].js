@@ -46,6 +46,7 @@ const BlogPost = ({ feed, blogId }) => {
           <div className="box"></div>
           <div className="box"></div>
         </div>
+        <div className="line"></div>
         <div className="share">
             <a className="share-btn" target="_blank" href={`https://www.facebook.com/sharer/sharer.php?u=${process.env.development}/${blogId}`}><img src={facebook}/></a>
             <a className="share-btn" target="_blank" href={`https://twitter.com/share?url=${process.env.development}/${blogId}&text=${feed.slug}via=@yunus_alpak`}><img src={twitter}/></a>
