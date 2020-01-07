@@ -1,14 +1,13 @@
 import { useState, useRef, useEffect } from "react";
 import Router from "next/router";
-import firebase from "../common/firebase";
-import twitter from "../images/twitter.png"
-import styles from "../styles/admin.scss";
+import firebase from "../../common/firebase";
+import twitter from "../../images/twitter.png"
+import styles from "../../styles/login.scss";
 import { TweenLite, TimelineLite, Power3} from "gsap";
 
 const Admin = () => {
     let login_button = useRef(null);
-    let div1 = useRef(null);
-    let div2 = useRef(null);
+    let login_div = useRef(null);
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -17,9 +16,13 @@ const Admin = () => {
     const animate = () => {
         setClick({clicked: true})
         var tl = new TimelineLite();
-        tl.to(login_button, .5, {
+        tl.to(login_button, .3, {
             opacity:0,
             ease: Power3.easeInOut
+        })
+        .from(login_div, 1, {
+            scale: 0.4,
+            ease: Power3.easeOut
         })
         
     }
@@ -39,10 +42,10 @@ const Admin = () => {
 
     return (
         <div className="admin-container">
-            <div ref={el => {div1 = el}} className={`animate-bg-1${click.clicked ? " active" : ""}`}></div>
-            <div ref={el => {div2 = el}} className={`animate-bg-2${click.clicked ? " active" : ""}`}></div>
+            <div className={`animate-bg-1${click.clicked ? " active" : ""}`}></div>
+            <div className={`animate-bg-2${click.clicked ? " active" : ""}`}></div>
             <div ref={el => {login_button = el}} className="login-animate" onClick={animate}></div>
-            <div className="login-div">
+            <div ref={el =>{ login_div = el}} className="login-div">
                 <div className="logo"><img src={twitter}/></div>
                 <div className="title">Yunus Emre Alpak</div>
                 <div className="sub-title">Beta</div>
