@@ -17,6 +17,8 @@ const BlogPost = ({ feed, blogId }) => {
     description: feed.title
   }
 
+  const [hover, setHover] = useState(false);
+
   let blogImage = useRef(null);
   let blogBg = useRef(null);
 
@@ -43,24 +45,45 @@ const BlogPost = ({ feed, blogId }) => {
         <div ref={el => { blogBg = el }} className="blog-container">
           <div className="blog-content">
             <div dangerouslySetInnerHTML={{ __html: state.description }}></div>
-            <div className="box"></div>
-            <div className="box"></div>
-            <div className="box"></div>
-            <div className="box"></div>
-          </div>
-          <div id="line-one" className="line"></div>
-          <div className="blog-comment">
-                <div> Comment </div>
           </div>
           <div className="line"></div>
+          <div className="suggest-container">
+            <h3 className="suggest-title">Bu Yazılara da Bakabilirsiniz</h3>
+            <div className="suggest-box">
+              <div className="suggest-blog">
+                <img src={computer} />
+                <div className="blog-description">
+                  <p className="blog-title">BLOG TITLE SAMPLE</p>
+                  <p className="blog-subtitle">The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested.</p>
+                  <p className="blog-date">8.1.2020</p>
+                </div>
+              </div>
+              <div className="suggest-blog">
+                <img src={computer} />
+                <div className="blog-description">
+                  <p className="blog-title">BLOG TITLE SAMPLE</p>
+                  <p className="blog-subtitle">The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested.</p>
+                  <p className="blog-date">8.1.2020</p>
+                </div>
+              </div>
+              <div className="suggest-blog">
+                <img src={computer} />
+                <div className="blog-description">
+                  <p className="blog-title">BLOG TITLE SAMPLE</p>
+                  <p className="blog-subtitle">The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested.</p>
+                  <p className="blog-date">8.1.2020</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="line-two" className="line two"></div>
           <Controller>
             <Scene
-              triggerElement="#line-one"
-              offset={-400}
-              duration={800}
-              reverse={true}
-              pin={false}
-              >
+               triggerElement="#line-two"
+               offset={-400}
+               duration={300}
+            >
               <Tween
                 wrapper={<div className="share" />}
                 staggerFrom={{
@@ -69,6 +92,8 @@ const BlogPost = ({ feed, blogId }) => {
                   ease: Power3.easeOut
                 }}
                 stagger={0.15}
+                ease="Strong.easeOut"
+                totalProgress={1000}
               >
                 <a className="share-btn" target="_blank" href={`https://www.facebook.com/sharer/sharer.php?u=${process.env.development}/${blogId}`}><img src={facebook} /></a>
                 <a className="share-btn" target="_blank" href={`https://twitter.com/share?url=${process.env.development}/${blogId}&text=${feed.slug}via=@yunus_alpak`}><img src={twitter} /></a>
@@ -79,7 +104,7 @@ const BlogPost = ({ feed, blogId }) => {
             </Scene>
           </Controller>
         </div>
-        
+
       </div>
       <style jsx>{styles}</style>
     </div>

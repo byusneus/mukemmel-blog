@@ -1,15 +1,17 @@
 @import "./variables.scss";
 
 .blog-main{
-    z-index: -1;
+    font-family: 'Zilla Slab', serif;
     margin-left: 315px;
+    width: 75%;
+    height: 100%;
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     .blog-img{
-        z-index: -20;
+        z-index: -1;
         position: fixed;
         top: -4%;
         width: 105%;
@@ -25,6 +27,7 @@
         top: 250px;
         margin-bottom: 50px;
         width: 75%;
+        height: auto;
         padding: 40px;
         background: #e9e9e9;
         box-shadow: 0 12px 25px -2px black;
@@ -40,13 +43,70 @@
             width: 100%;
             height: 1px;
             background: #303030;
+            .two{
+                margin-bottom: 50px;
+            }
         }
-        .blog-comment{
-            z-index: -1;
-            margin-top: 100px;
+        .suggest-container{
+            position: relative;
+            display: flex;
+            flex-direction: column;
             width: 100%;
-            height: 300px;
-            background: #303030;
+            .suggest-title{
+                text-align: center;
+            }
+            .suggest-box{
+                position: relative;
+                width: 100%;
+                height: auto;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                .suggest-blog{
+                    overflow: hidden;
+                    cursor: pointer;
+                    margin-right: 25px;
+                    width: 30%;
+                    height: auto;
+                    background: #303030;
+                    transition: all 700ms ease;
+                    img{
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        transition: all 700ms ease;
+                    }
+                    .blog-description{
+                        visibility: hidden;
+                        padding-left: 10px;
+                        padding-right: 10px;
+                        color: #e9e9e9;
+                        transition: all 300ms ease;
+                        .blog-title{
+                            font-weight: 600;
+                            text-align: center;
+                        }
+                        .blog-subtitle{
+                            font-size: 15px;
+                        }
+                        .blog-date{
+                            padding-right: 5px;
+                            text-align: right;
+                            font-size: 13px!important;
+                        }
+                    }
+                    &:hover{
+                        img{
+                            height: 50%;
+                        }
+                        .blog-description{
+                            visibility: visible;
+                        }
+                        
+                    }
+                    
+                }
+            }
         }
         .share{
             z-index: 2;
