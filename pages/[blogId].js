@@ -81,8 +81,8 @@ const BlogPost = ({ feed, blogId }) => {
           <Controller>
             <Scene
                triggerElement="#line-two"
-               offset={-400}
-               duration={300}
+               offset={-600}
+               duration={500}
             >
               <Tween
                 wrapper={<div className="share" />}

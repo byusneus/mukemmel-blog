@@ -6,8 +6,6 @@ import twitter from "../images/twitter.png";
 import instagram from "../images/instagram.png";
 import youtube from "../images/youtube.png";
 import linkedin from "../images/linkedin.png";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faFacebook, faInstagram, faYoutube } from "@fortawesome/free-brands-svg-icons"
 import { TweenLite, TimelineLite, Power3 } from "gsap";
 
 const AdminSidebar = (props) => {

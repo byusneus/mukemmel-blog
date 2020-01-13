@@ -63,12 +63,15 @@
                 flex-wrap: wrap;
                 justify-content: center;
                 .suggest-blog{
+                    position: relative;
+                    top: 0;
                     overflow: hidden;
                     cursor: pointer;
                     margin-right: 25px;
                     width: 30%;
                     height: auto;
                     background: #303030;
+                    box-shadow: 0 25px 35px -15px #000000;
                     transition: all 700ms ease;
                     img{
                         width: 100%;
@@ -96,6 +99,7 @@
                         }
                     }
                     &:hover{
+                        top: -10px;
                         img{
                             height: 50%;
                         }
@@ -131,7 +135,7 @@
                 img{
                     width: 35%;
                     filter: saturate(0);
-                    transition: .2s linear;
+                    transition: .2s ease;
                 }
                 &:hover{
                     img{
@@ -150,7 +154,7 @@
                     top: 90%;
                 }
                 &:hover::before{
-                    animation: aaa .7s 1;
+                    animation: aaa 1s 1;
                     top: -10%;
                     left: -10%;
                 }
