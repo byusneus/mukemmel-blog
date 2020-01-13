@@ -22,9 +22,12 @@ class MyApp extends App {
         return (
             <div>
                 <Head title="Home"/>
-                <div className="full-bg"></div>
-                {router.route != "/admin/login" && router.route != "/dashboard" ? <Sidebar /> : null}
-                {router.route === "/dashboard" ? <AdminSidebar /> : null}
+                {!router.route.includes("admin") 
+                    ? <Sidebar /> 
+                    : !router.route.includes("admin/login") 
+                        ?<AdminSidebar /> 
+                        :null
+                }
                 <main>
                     <AnimatePresence exitBeforeEnter>
                         <motion.div

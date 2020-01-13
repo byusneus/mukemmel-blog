@@ -10,64 +10,12 @@ import { TweenLite, TimelineLite, Power3 } from "gsap";
 
 const AdminSidebar = (props) => {
 
-    let bg = useRef(null);
-    let bg_addition = useRef(null);
     let menu_button = useRef(null);
-    let profileImage = useRef(null);
-    let profileName = useRef(null);
-    let navList = useRef(null);
-    let line = useRef(null);
-    let socialList = useRef(null);
 
-    const [state, setState] = useState({ clicked: false });
+    const [state, setState] = useState({clicked: false})
 
     useEffect(() => {
-        var tl = new TimelineLite();
-
-        tl.fromTo(bg_addition, .5, {
-            width:0,
-            ease: Power3.easeInOut
-        }, {
-            width: 315,
-            ease: Power3.easeInOut
-        })
-        .fromTo(bg, .5, {
-            width:0,
-            ease: Power3.easeInOut
-        }, {
-            width: 315,
-            ease: Power3.easeInOut
-        })
-        .from(profileImage, 1, {
-            opacity: 0,
-            y: -40,
-            ease: Power3.easeInOut
-        })
-        .from(profileName, 1, {
-            opacity: 0,
-            y: 40,
-            ease: Power3.easeInOut
-        }, "-=.5")
-        .from(menu_button, 1, {
-            opacity: 0,
-            y: -40,
-            ease: Power3.easeInOut
-        }, "-=.5")
-        .staggerFrom(navList.children, 1, {
-            opacity: 0,
-            y: -50,
-            ease: Power3.easeInOut
-        }, .1, "-=1")
-        .from(line, .5, {
-            opacity: 0,
-            width: 0,
-            ease: Power3.easeOut
-        })
-        .staggerFrom(socialList.children, 1, {
-            opacity: 0,
-            y: -20,
-            ease: Power3.easeInOut
-        }, .1)
+        
 
     }, []);
 
@@ -80,21 +28,13 @@ const AdminSidebar = (props) => {
     }
 
     return (
-        <div className="main-content">
             <header className={`${state.clicked ? "active" : ""}`}>
                 <div ref={el => { menu_button = el }} className={`icon${state.clicked ? " active" : ""}`} onClick={menuClicked}>
                     <div className="hamburger"></div>
                 </div>
-                <div ref={(el) => { bg_addition = el }} className="bg-addition"></div>
-                <div ref={(el) => { bg = el }} className={`bg${state.clicked ? " active" : ""}`}></div>
                 <nav className="sidebar">
-                    <div className="profile">
-                        <div ref={(el) => { profileImage = el }} className="profile-box">
-                            <img className="profile-img" src={profile} />
-                        </div>
-                    </div>
-                    <div ref={(el) => { profileName = el }} className="profile-name">Yunus Emre ALPAK</div>
-                    <ul ref={(el) => { navList = el }} className={`nav-list${state.clicked ? " active" : ""}`}>
+                    <div className="profile-name">Yunus Emre ALPAK</div>
+                    <ul className={`nav-list${state.clicked ? " active" : ""}`}>
                         <li className="nav-item">
                             ANASAYFA
                             <hr />
@@ -112,22 +52,11 @@ const AdminSidebar = (props) => {
                             <hr />
                         </li>
                     </ul>
-                    <div className={`social-media${state.clicked ? " active" : ""}`}>
-                        <hr ref={(el) => { line = el }} className="line" />
-                        <div ref={(el) => { socialList = el }} className="social-media-items">
-                            <img src={facebook} />
-                            <img src={twitter} />
-                            <img src={instagram} />
-                            <img src={linkedin} />
-                            <img src={youtube} />
-                        </div>
-                    </div>
                 </nav>
-
+                <style jsx>{styles}</style>
             </header>
 
-            <style jsx>{styles}</style>
-        </div>
+            
     )
 }
 
