@@ -8,8 +8,34 @@ import Router from 'next/router';
 const BlogEkle = () => {
 
     const [title, setTitle] = useState('');
+    const [slug, setSlug] = useState('');
+    const [image, setImage] = useState(null);
+    const [busy, setBusy] = useState(false);
 
     const saveContent = () => {
+        setBusy(true);
+
+        fileUploadHandler();
+    }
+
+    const fileUploadHandler = async () => {
+        var storageRef = firebase.storage().ref();
+        var mainImage = storageRef.child(image.name);
+        var mainUrl = "";
+
+        mainImage.put(image).then((snapshot) => {
+            snapshot.ref.getDownloadURL().then((downloadUrl) => {
+
+                mainUrl = downloadUrl;
+                saveText(mainUrl);
+            });
+
+        });
+
+
+    }
+
+    const saveText = (pictureUrl) => {
         var editor = document.getElementsByClassName("ql-editor").item(0);
         var newBlog = firestore.collection("bloglar").doc();
 
@@ -17,21 +43,23 @@ const BlogEkle = () => {
         var slug = getSlugFromTitle();
         var date = getDateFormatString();
 
-        var mainImage = firebase.storage().ref();
-
         var data = {
             _id: newBlog.id,
             title: title,
             text: text,
-            mainPicture: "",
+            mainPicture: pictureUrl,
             slug: slug,
             date: date
         }
 
-        newBlog.set(data).then(()=>{
-            Router.push("/"+slug);
+        console.log(data);
+
+        newBlog.set(data).then(() => {
+            Router.push("/" + slug);
         });
     }
+
+
 
     const setImageWidth = (content) => {
         var res = content.replace("<img", "<img width='100%'");
@@ -39,7 +67,7 @@ const BlogEkle = () => {
     }
 
     const getDateFormatString = () => {
-        var newdate ="";
+        var newdate = "";
         var dateObj = new Date();
         var month = dateObj.getUTCMonth() + 1; //months from 1-12
         var day = dateObj.getUTCDate();
@@ -54,20 +82,24 @@ const BlogEkle = () => {
         var slug = "";
         var dizi = title.toLowerCase().split(" ");
 
-        for(var i=0;i<dizi.length;i++){
-            if(i == 0){
+        for (var i = 0; i < dizi.length; i++) {
+            if (i == 0) {
                 slug = dizi[0];
-            }else{
+            } else {
                 slug = slug + "-" + dizi[i];
             }
         }
+
+        setSlug(slug);
 
         return slug;
     }
 
     return (
         <div className="main-content">
+            {busy ? <h2>Loading</h2> : null}
             <div className="title"><input className="blog-title" placeholder="BLOG BAŞLIK" onChange={event => setTitle(event.target.value)} /></div>
+            <div className="blog-image">Blog Ana Resim : <input type="file" onChange={event => setImage(event.target.files[0])} /></div>
             <QuillNoSSRWrapper />
             <button className="save-button" onClick={saveContent}>KAYDET</button>
             <style jsx>{styles}</style>

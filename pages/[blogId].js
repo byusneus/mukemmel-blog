@@ -42,7 +42,7 @@ const BlogPost = ({ feed, blogId }) => {
       <Head title={feed.slug} />
       <div className="blog-main">
         <div ref={el => { blogImage = el }} className="blog-img">
-          <img src={computer} />
+          <img src={feed.mainPicture} />
         </div>
         <div ref={el => { blogBg = el }} className="blog-container">
           <div className="blog-content">
