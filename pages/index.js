@@ -1,5 +1,4 @@
 import React, { useRef, useEffect, useState } from "react";
-import Router from 'next/router';
 import Link from "next/link";
 import { MdAlarm, MdContentPaste } from "react-icons/md";
 import { TweenLite, Power3 } from "gsap";

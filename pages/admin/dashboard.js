@@ -15,8 +15,6 @@ const Dashboard = () => {
   return (
     <div className="main-content">
       <h3>BLOG EKLE</h3>
-      <QuillNoSSRWrapper />
-      <button onClick={saveContent}>Save</button>
     <style jsx>{styles}</style>
     </div>
   )

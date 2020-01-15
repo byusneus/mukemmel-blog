@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from "react";
+import React, { useRef, useEffect, useState} from "react";
 import Head from "../components/Head";
 import firebase from "../common/firebase";
 import firestore from "../common/firestore";
@@ -12,9 +12,11 @@ import twitter from "../images/twitter.png";
 import reddit from "../images/reddit.png";
 import linkedin from "../images/linkedin.png";
 
+
+
 const BlogPost = ({ feed, blogId }) => {
   const state = {
-    description: feed.title
+    description: feed.text
   }
 
   const [hover, setHover] = useState(false);
@@ -44,7 +46,8 @@ const BlogPost = ({ feed, blogId }) => {
         </div>
         <div ref={el => { blogBg = el }} className="blog-container">
           <div className="blog-content">
-            <div dangerouslySetInnerHTML={{ __html: state.description }}></div>
+            <div className="blog-title"><h2>{feed.title}</h2></div>
+            <div className="blog-text" dangerouslySetInnerHTML={{ __html: state.description }}></div>
           </div>
           <div className="line"></div>
           <div className="suggest-container">
@@ -113,7 +116,7 @@ const BlogPost = ({ feed, blogId }) => {
 }
 
 BlogPost.getInitialProps = async ({ req, query }) => {
-  const result = await firestore.collection("tarifler").where("slug", "==", query.blogId).get();
+  const result = await firestore.collection("bloglar").where("slug", "==", query.blogId).get();
 
   const newFeeds = [];
   result.forEach(doc => {

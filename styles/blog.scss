@@ -31,6 +31,14 @@
         padding: 40px;
         background: #e9e9e9;
         box-shadow: 0 12px 25px -2px black;
+        .blog-content{
+            width: 100%;
+            .blog-title{
+                width: 100%;
+                text-align: center;
+                text-transform: uppercase;
+            }
+        }
         .box{
             width: 200px;
             height: 300px;
