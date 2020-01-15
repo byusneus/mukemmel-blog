@@ -19,10 +19,6 @@ const Home = ({ blogList }) => {
   const [pageCount, setPageCount] = useState(0);
 
   useEffect(() => {
-    setPageCount(Math.floor(blogList.length/8));
-  }, []);
-
-  useEffect(() => {
     var tl = new TimelineLite();
     tl.to(blogListHtml, 1.5, {
       opacity: 1,
@@ -33,17 +29,6 @@ const Home = ({ blogList }) => {
       ease: Power3.easeIn
     }, .25)
   }, []);
-  
-  const setPagination = () => {
-    let paginationArray = [];
-
-    for(let i=0;pageCount+1;i++){
-    paginationArray.push(<div className="page">{i+1}</div>)
-    }
-
-    return paginationArray;
-
-  }
 
   return (
     <div className="main-page">
@@ -61,13 +46,11 @@ const Home = ({ blogList }) => {
         ))}
 
       </div>
-      <div ref={el => { pagination = el }} className="pagination">
+      {/* <div ref={el => { pagination = el }} className="pagination">
         <div className="page"><img src={next} /></div>
-        {
-          setPagination()
-        }
+          
         <div className="page"><img src={next} /></div>
-      </div>
+      </div> */}
       <style jsx>{styles}</style>
     </div>
 

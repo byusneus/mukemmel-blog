@@ -1,8 +1,7 @@
-import React, { useRef, useEffect, useState} from "react";
+import React, { useRef, useEffect, useState } from "react";
 import Head from "../components/Head";
-import firebase from "../common/firebase";
+import Link from "next/link";
 import firestore from "../common/firestore";
-import computer from "../images/computer.jpg";
 import styles from "../styles/blog.scss"
 import { TweenLite, Power3 } from "gsap";
 import { Tween, Timeline } from 'react-gsap';
@@ -14,7 +13,7 @@ import linkedin from "../images/linkedin.png";
 
 
 
-const BlogPost = ({ feed, blogId }) => {
+const BlogPost = ({ feed, blogId, randomBlogs }) => {
   const state = {
     description: feed.text
   }
@@ -36,7 +35,7 @@ const BlogPost = ({ feed, blogId }) => {
       ease: Power3.easeInOut
     })
   }, []);
-
+  console.log(randomBlogs);
   return (
     <div>
       <Head title={feed.slug} />
@@ -53,39 +52,30 @@ const BlogPost = ({ feed, blogId }) => {
           <div className="suggest-container">
             <h3 className="suggest-title">Bu Yazılara da Bakabilirsiniz</h3>
             <div className="suggest-box">
-              <div className="suggest-blog">
-                <img src={computer} />
-                <div className="blog-description">
-                  <p className="blog-title">BLOG TITLE SAMPLE</p>
-                  <p className="blog-subtitle">The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested.</p>
-                  <p className="blog-date">8.1.2020</p>
-                </div>
-              </div>
-              <div className="suggest-blog">
-                <img src={computer} />
-                <div className="blog-description">
-                  <p className="blog-title">BLOG TITLE SAMPLE</p>
-                  <p className="blog-subtitle">The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested.</p>
-                  <p className="blog-date">8.1.2020</p>
-                </div>
-              </div>
-              <div className="suggest-blog">
-                <img src={computer} />
-                <div className="blog-description">
-                  <p className="blog-title">BLOG TITLE SAMPLE</p>
-                  <p className="blog-subtitle">The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested.</p>
-                  <p className="blog-date">8.1.2020</p>
-                </div>
-              </div>
+              {randomBlogs.map((blog, index) => (
+                <Link href="/[blogId]" as={`/${blog.slug}`}>
+                  <a>
+                    <div key={index} className="suggest-blog">
+                      <img src={blog.mainPicture} />
+                      <div className="blog-description">
+                        <p className="blog-title">{blog.title}</p>
+                        <p className="blog-subtitle">{blog.title}</p>
+                        <p className="blog-date">{blog.date}</p>
+                      </div>
+                    </div>
+                  </a>
+                </Link>
+
+              ))}
             </div>
           </div>
 
           <div id="line-two" className="line two"></div>
           <Controller>
             <Scene
-               triggerElement="#line-two"
-               offset={-600}
-               duration={500}
+              triggerElement="#line-two"
+              offset={-600}
+              duration={500}
             >
               <Tween
                 wrapper={<div className="share" />}
@@ -116,16 +106,34 @@ const BlogPost = ({ feed, blogId }) => {
 }
 
 BlogPost.getInitialProps = async ({ req, query }) => {
-  const result = await firestore.collection("bloglar").where("slug", "==", query.blogId).get();
+  const result = await firestore.collection("bloglar").get();
+  let bloglar = [];
+  let randomBlogs = [];
 
-  const newFeeds = [];
+  let blog = null;
   result.forEach(doc => {
-    newFeeds.push(doc.data());
+    if (doc.data().slug == query.blogId)
+      blog = doc.data();
+    else
+      bloglar.push(doc.data());
   })
 
+  if (bloglar.length >= 3) {
+    for (let i = 0; i < 3; i++) {
+      var min = 0;
+      var max = bloglar.length;
+      var randomValue = Math.floor(Math.random() * (max - min + 1) + min);
+      randomBlogs.push(bloglar[randomValue]);
+    }
+  } else {
+    for (let i = 0; i < bloglar.length; i++)
+      randomBlogs[i] = bloglar[i];
+  }
+
   return {
-    feed: newFeeds[0],
-    blogId: query.blogId
+    feed: blog,
+    blogId: query.blogId,
+    randomBlogs: randomBlogs
   }
 };
 
