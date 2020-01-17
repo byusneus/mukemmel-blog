@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styles from "../../styles/blog-ekle.scss";
 import QuillNoSSRWrapper from "../../components/Editor";
 import firestore from "../../common/firestore";
 import firebase from "../../common/firebase";
 import Router from 'next/router';
 import Loader from 'react-loader-spinner'
+import PermissionControl from "../../components/PermissionControl";
 
 const BlogEkle = () => {
 
@@ -40,7 +41,7 @@ const BlogEkle = () => {
         var editor = document.getElementsByClassName("ql-editor").item(0);
         let length = 0;
         var bloglar = await firestore.collection("bloglar").get();
-        bloglar.forEach((doc)=>{
+        bloglar.forEach((doc) => {
             length++;
         })
         var newBlog = firestore.collection("bloglar").doc();
@@ -104,25 +105,27 @@ const BlogEkle = () => {
     }
 
     return (
-        <div>
-            {busy ? <div className="loader">
-                <Loader
-                    type="Rings"
-                    color="#303030"
-                    height={120}
-                    width={120}
-                />
-            </div>
-                : null}
-            <div className="main-content">
-                <div className="title"><input className="blog-title" placeholder="BLOG BAŞLIK" onChange={event => setTitle(event.target.value)} /></div>
-                <div className="blog-image">Blog Ana Resim : <input type="file" onChange={event => setImage(event.target.files[0])} /></div>
-                <QuillNoSSRWrapper />
-                <button className="save-button" onClick={saveContent}>KAYDET</button>
+        <PermissionControl>
+            <div>
+                {busy ? <div className="loader">
+                    <Loader
+                        type="Rings"
+                        color="#303030"
+                        height={120}
+                        width={120}
+                    />
+                </div>
+                    : null}
+                <div className="main-content">
+                    <div className="title"><input className="blog-title" placeholder="BLOG BAŞLIK" onChange={event => setTitle(event.target.value)} /></div>
+                    <div className="blog-image">Blog Ana Resim : <input type="file" onChange={event => setImage(event.target.files[0])} /></div>
+                    <QuillNoSSRWrapper />
+                    <button className="save-button" onClick={saveContent}>KAYDET</button>
 
+                </div>
             </div>
             <style jsx>{styles}</style>
-        </div>
+        </PermissionControl>
 
     )
 }

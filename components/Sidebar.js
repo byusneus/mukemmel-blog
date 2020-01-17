@@ -21,6 +21,10 @@ const Sidebar = (props) => {
 
     const [state, setState] = useState({ clicked: false });
 
+    useEffect(()=>{
+        localStorage.clear();
+    },[])
+
     useEffect(() => {
         var tl = new TimelineLite();
 
