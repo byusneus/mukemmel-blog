@@ -30,7 +30,7 @@ const Admin = () => {
     const login = () => {
         firebase.auth().signInWithEmailAndPassword(email, password)
             .then(res => {
-                Router.push("/dashboard");
+                Router.push("/admin/dashboard");
             })
             .catch(function (error) {
                 // Handle Errors here.

@@ -109,6 +109,10 @@ header{
                 font-size: 15px;
                 font-weight: 600;
                 margin-right: 50px;
+                a{
+                    text-decoration: none;
+                    color: #939087;
+                }
                 hr{
                     transition:width .3s  ease-in-out;
                     width: 0;

@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@zeit/next-css": "^1.0.1",
     "firebase": "^7.5.2",
     "framer-motion": "^1.7.0",
     "gsap": "^3.0.4",
@@ -19,6 +20,7 @@
     "react-gsap": "^1.2.0",
     "react-icons": "^3.8.0",
     "react-image-select-component": "^1.1.2",
+    "react-loader-spinner": "^3.1.5",
     "react-quill": "^1.3.3",
     "react-scrollmagic": "^2.1.1"
   },

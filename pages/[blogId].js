@@ -35,10 +35,10 @@ const BlogPost = ({ feed, blogId, randomBlogs }) => {
       ease: Power3.easeInOut
     })
   }, []);
-  console.log(randomBlogs);
+  
   return (
     <div>
-      <Head title={feed.slug} />
+      <Head title={feed.title} />
       <div className="blog-main">
         <div ref={el => { blogImage = el }} className="blog-img">
           <img src={feed.mainPicture} />
