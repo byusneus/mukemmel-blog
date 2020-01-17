@@ -15,6 +15,7 @@
 }
 
 header{
+    z-index: 50;
     position: fixed;
     top: 0;
     left: 0;
@@ -172,14 +173,19 @@ header{
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            color: #939087;
+            
             letter-spacing: 2px;
             list-style-type: none;
             .nav-item{
+                
                 font-family: 'Zilla Slab', serif;
                 font-size: 15px;
                 font-weight: 600;
                 margin-bottom: 50px;
+                .btn{
+                    text-decoration: none;
+                    color: #939087;
+                }
                 hr{
                     transition:width .3s  ease-in-out;
                     width: 0;

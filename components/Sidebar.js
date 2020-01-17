@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from "react"
+import Link from "next/link"
 import styles from "../styles/layout.scss";
 import profile from "../images/ogr_foto.jpg";
 import facebook from "../images/facebook.png";
@@ -21,9 +22,9 @@ const Sidebar = (props) => {
 
     const [state, setState] = useState({ clicked: false });
 
-    useEffect(()=>{
+    useEffect(() => {
         localStorage.clear();
-    },[])
+    }, [])
 
     useEffect(() => {
         var tl = new TimelineLite();
@@ -32,40 +33,40 @@ const Sidebar = (props) => {
             height: 0,
             ease: Power3.easeOut
         })
-        .from(bg, 1, {
-            height: 0,
-            ease: Power3.easeIn
-        })
-        .from(profileImage, 1, {
-            opacity: 0,
-            y: -40,
-            ease: Power3.easeInOut
-        })
-        .from(profileName, 1, {
-            opacity: 0,
-            y: 40,
-            ease: Power3.easeInOut
-        }, "-=.5")
-        .from(menu_button, 1, {
-            opacity: 0,
-            y: -40,
-            ease: Power3.easeInOut
-        }, "-=.5")
-        .staggerFrom(navList.children, 1, {
-            opacity: 0,
-            y: -50,
-            ease: Power3.easeInOut
-        }, .1, "-=1")
-        .from(line, .5, {
-            opacity: 0,
-            width: 0,
-            ease: Power3.easeOut
-        })
-        .staggerFrom(socialList.children, 1, {
-            opacity: 0,
-            y: -20,
-            ease: Power3.easeInOut
-        }, .1)
+            .from(bg, 1, {
+                height: 0,
+                ease: Power3.easeIn
+            })
+            .from(profileImage, 1, {
+                opacity: 0,
+                y: -40,
+                ease: Power3.easeInOut
+            })
+            .from(profileName, 1, {
+                opacity: 0,
+                y: 40,
+                ease: Power3.easeInOut
+            }, "-=.5")
+            .from(menu_button, 1, {
+                opacity: 0,
+                y: -40,
+                ease: Power3.easeInOut
+            }, "-=.5")
+            .staggerFrom(navList.children, 1, {
+                opacity: 0,
+                y: -50,
+                ease: Power3.easeInOut
+            }, .1, "-=1")
+            .from(line, .5, {
+                opacity: 0,
+                width: 0,
+                ease: Power3.easeOut
+            })
+            .staggerFrom(socialList.children, 1, {
+                opacity: 0,
+                y: -20,
+                ease: Power3.easeInOut
+            }, .1)
 
     }, []);
 
@@ -94,19 +95,15 @@ const Sidebar = (props) => {
                     <div ref={(el) => { profileName = el }} className="profile-name">Yunus Emre ALPAK</div>
                     <ul ref={(el) => { navList = el }} className={`nav-list${state.clicked ? " active" : ""}`}>
                         <li className="nav-item">
-                            ANASAYFA
+                            <Link href="/"><a className="btn">ANASAYFA</a></Link>
                             <hr />
                         </li>
                         <li className="nav-item">
-                            BLOG
+                            <Link href="/"><a className="btn">GALERİ</a></Link>
                             <hr />
                         </li>
                         <li className="nav-item">
-                            GALERİ
-                            <hr />
-                        </li>
-                        <li className="nav-item">
-                            İLETİŞİM
+                            <Link href="/about"><a className="btn">HAKKIMDA</a></Link>
                             <hr />
                         </li>
                     </ul>

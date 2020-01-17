@@ -35,6 +35,15 @@ const BlogPost = ({ feed, blogId, randomBlogs }) => {
       ease: Power3.easeInOut
     })
   }, []);
+
+  useEffect(()=> {
+    return () => {
+      TweenLite.from(blogImage, .1, {
+        opacity: 0,
+        ease: Power3.liner
+      })
+    }
+  })
   
   return (
     <div>
