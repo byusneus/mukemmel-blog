@@ -37,7 +37,7 @@ const AdminSidebar = (props) => {
                 <div className="profile-name">Yunus Emre ALPAK</div>
                 <ul className={`nav-list${state.clicked ? " active" : ""}`}>
                     <li className="nav-item">
-                        <Link href="/admin/blog-add"><a className="btn">BLOGLAR</a></Link>
+                        <Link href="/admin/dashboard"><a className="btn">BLOGLAR</a></Link>
                         <hr />
                     </li>
                     <li className="nav-item">

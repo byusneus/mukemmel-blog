@@ -8,6 +8,7 @@
 }
 
 .main-content{
+    font-family: 'Zilla Slab', serif;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -17,6 +18,65 @@
     width: 100%;
     h3{
         padding: 50px;
+    }
+    .content-table{
+        border-collapse: collapse;
+        margin: 25px 0;
+        font-size: 0.9em;
+        min-width: 400px;
+        border-radius: 5px 5px 0 0;
+        overflow: hidden;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.349);
+        thead{
+            tr{
+                background-color: #303030;
+                color: #fff;
+                text-align: center;
+                font-weight: bold;
+            }
+        }
+        th,
+        td{
+           padding: 18px 30px; 
+           text-align: center;
+        }
+        tbody{
+            tr{
+                border-bottom: 1px solid #dddddd;
+                &:nth-of-type(even){
+                    background-color: #f3f3f3;
+                    font-weight: bold;
+                }
+                &:last-of-type{
+                    border-bottom: 2px solid #303030;
+                    color: #303030;
+                }
+                .btn{
+                    text-decoration: none;
+                    color: #fff;
+                    font-weight: bold;
+                    padding: 7px;
+                    border: 1px solid #30303059;
+                    border-radius: 5px;
+                    &.red{
+                        background-color: rgba(255, 0, 0, 0.651);
+                        transition: .5s;
+                        &:hover{
+                            color: rgba(255, 0, 0, 0.651);
+                            background-color: #f3f3f3;
+                        }
+                    }
+                    &.green{
+                        background-color: rgba(0, 128, 0, 0.678);
+                        transition: .5s;
+                        &:hover{
+                            color: rgba(0, 128, 0, 0.678);
+                            background-color: #f3f3f3;
+                        }
+                    }
+                }
+            }
+        }
     }
 
     @media(max-width: $laptop){
