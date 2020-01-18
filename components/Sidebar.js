@@ -7,7 +7,6 @@ import twitter from "../images/twitter.png";
 import instagram from "../images/instagram.png";
 import youtube from "../images/youtube.png";
 import linkedin from "../images/linkedin.png";
-import { TweenLite, TimelineLite, Power3 } from "gsap";
 
 const Sidebar = (props) => {
 
