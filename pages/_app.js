@@ -4,6 +4,7 @@ import Head from "../components/Head"
 import Sidebar from "../components/Sidebar";
 import AdminSidebar from "../components/AdminSidebar";
 import { AnimatePresence, motion } from "framer-motion";
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css"
 import styles from "../styles/app.scss";
 
 class MyApp extends App {

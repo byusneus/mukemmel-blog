@@ -3,7 +3,6 @@ import Link from "next/link";
 import { TimelineLite, Power3 } from "gsap";
 import { motion } from "framer-motion";
 import styles from "../styles/home.scss";
-import "react-loader-spinner/dist/loader/css/react-spinner-loader.scss"
 import Loader from 'react-loader-spinner'
 import firestore from "../common/firestore";
 
