@@ -178,6 +178,7 @@ header{
             letter-spacing: 2px;
             list-style-type: none;
             .nav-item{
+                position: relative;
                 font-family: 'Zilla Slab', serif;
                 font-size: 15px;
                 font-weight: 600;
@@ -195,7 +196,6 @@ header{
                     background-color: rgba(255, 0, 0, 0.199);
                     transform: rotate(30deg);
                     cursor: default;
-                    z-index: 80;
                 }
                 &.disabled{
                     hr{

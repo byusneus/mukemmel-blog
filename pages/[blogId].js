@@ -39,6 +39,7 @@ const BlogPost = ({ feed, blogId, randomBlogs }) => {
   return (
     <div>
       <Head title={feed.title} />
+      <div className="background"></div>
       <div className="blog-main">
         <div ref={el => { blogImage = el }} className="blog-img">
           <img src={feed.mainPicture} />

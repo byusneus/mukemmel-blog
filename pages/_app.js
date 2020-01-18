@@ -29,6 +29,7 @@ class MyApp extends App {
                         ?<AdminSidebar /> 
                         :null
                 }
+                <div className="background"></div>
                 <main>
                     <AnimatePresence exitBeforeEnter>
                         <motion.div

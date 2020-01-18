@@ -1,5 +1,6 @@
 @import "./variables.scss";
 
+
 .main-page{
     display: flex;
     margin-left: 315px;
@@ -65,6 +66,12 @@
                     cursor: pointer;
                     position: relative;
                     text-decoration: none;
+                    @media(max-width: 1366px){
+                        width: 90px;
+                        height: 20px;
+                        font-size: 11px;
+                        border: 2px solid;
+                    }
                     @media(max-width: $laptop){
                         width: 90px;
                         height: 20px;
@@ -80,6 +87,10 @@
                     background: #fff;
                     transform: skewX(50deg);
                     transition: .4s linear;
+                    @media(max-width: 1366px){
+                        width: 2px;
+                        height: 2px;
+                    }
                     @media(max-width: $laptop){
                         display: none;
                     }
@@ -105,11 +116,11 @@
                 }
             }
             @media(max-width: 1366px){
-                width: 200px;
-                height: 200px;
+                width: 220px;
+                height: 220px;
                 img{
-                    width: 200px;
-                    height: 200px;
+                    width: 220px;
+                    height: 220px;
                 }
             }
             @media(max-width: $laptop){
@@ -130,7 +141,7 @@
                 height: 200px;
                 filter:saturate(1);
                 @media(max-width: 1366px){
-                    width: 200px;
+                    width: 220px;
                     height: 120px;
                 }
                 @media(max-width: $laptop){
@@ -188,6 +199,9 @@
         @media(max-width: $laptop){
             left: 40%;
         }
+    }
+    @media(max-width: 1366px){
+        padding: 50px 25px 0px 25px;
     }
     @media(max-width: $laptop){
         margin-top: 5vh;
