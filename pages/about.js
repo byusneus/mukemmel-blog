@@ -7,58 +7,58 @@ const About = () => {
 
     let title = useRef(null);
 
-    useEffect(()=>{
-        var title = document.querySelectorAll(".about-title");
-        var subtitle = document.querySelectorAll(".about-subtitle");
-        var text = document.querySelectorAll(".about-text");
-        var info = document.querySelectorAll(".info");
-        var skillsSection = document.querySelectorAll(".skills-section");
-        var profilePic = document.querySelectorAll(".profile-pic img");
-        var downloadBtn = document.querySelectorAll(".cv-button");
+    // useEffect(()=>{
+    //     var title = document.querySelectorAll(".about-title");
+    //     var subtitle = document.querySelectorAll(".about-subtitle");
+    //     var text = document.querySelectorAll(".about-text");
+    //     var info = document.querySelectorAll(".info");
+    //     var skillsSection = document.querySelectorAll(".skills-section");
+    //     var profilePic = document.querySelectorAll(".profile-pic img");
+    //     var downloadBtn = document.querySelectorAll(".cv-button");
 
-        var tl = new TimelineLite();
-        tl.from(title, 1.2, {
-            opacity:0,
-            y: 50,
-            ease: Power3.easeOut,
-        }).from(subtitle, {
-            delay: -0.8,
-            duration: 1.2, 
-            opacity:0,
-            y: 50,
-            ease: Power3.easeOut,
-        }).from(text, {
-            delay: -0.8,
-            duration: 1.2, 
-            opacity:0,
-            y: -50,
-            ease: Power3.easeOut,
-        }).from(info, {
-            delay: -0.8,
-            duration: 1.2, 
-            opacity:0,
-            y: -50,
-            ease: Power3.easeOut,
-        }).from(profilePic, {
-            delay: -1,
-            duration: 1.2, 
-            opacity:0,
-            x: 100,
-            ease: Power3.easeOut,
-        }).from(downloadBtn, {
-            delay: -0.5,
-            duration: 1.2, 
-            opacity:0,
-            y: -50,
-            ease: Power3.easeOut,
-        }).from(skillsSection, {
-            delay: -0.8,
-            duration: 1.2, 
-            opacity:0,
-            y: 50,
-            ease: Power3.easeOut,
-        })
-    },[])
+    //     var tl = new TimelineLite();
+    //     tl.from(title, 1.2, {
+    //         opacity:0,
+    //         y: 50,
+    //         ease: Power3.easeOut,
+    //     }).from(subtitle, {
+    //         delay: -0.8,
+    //         duration: 1.2, 
+    //         opacity:0,
+    //         y: 50,
+    //         ease: Power3.easeOut,
+    //     }).from(text, {
+    //         delay: -0.8,
+    //         duration: 1.2, 
+    //         opacity:0,
+    //         y: -50,
+    //         ease: Power3.easeOut,
+    //     }).from(info, {
+    //         delay: -0.8,
+    //         duration: 1.2, 
+    //         opacity:0,
+    //         y: -50,
+    //         ease: Power3.easeOut,
+    //     }).from(profilePic, {
+    //         delay: -1,
+    //         duration: 1.2, 
+    //         opacity:0,
+    //         x: 100,
+    //         ease: Power3.easeOut,
+    //     }).from(downloadBtn, {
+    //         delay: -0.5,
+    //         duration: 1.2, 
+    //         opacity:0,
+    //         y: -50,
+    //         ease: Power3.easeOut,
+    //     }).from(skillsSection, {
+    //         delay: -0.8,
+    //         duration: 1.2, 
+    //         opacity:0,
+    //         y: 50,
+    //         ease: Power3.easeOut,
+    //     })
+    // },[])
 
     return (
         <div className="about-section">

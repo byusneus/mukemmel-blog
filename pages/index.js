@@ -13,19 +13,19 @@ const Home = ({ blogList }) => {
 
   const [pageCount, setPageCount] = useState(0);
 
-  useEffect(() => {
-    if (blogList != null) {
-      var tl = new TimelineLite();
-      tl.to(blogListHtml, 1.5, {
-        opacity: 1,
-        ease: Power3.linear
-      }).staggerFrom(pagination.children, .5, {
-        opacity: 0,
-        y: -30,
-        ease: Power3.easeIn
-      }, .25)
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (blogList != null) {
+  //     var tl = new TimelineLite();
+  //     tl.to(blogListHtml, 1.5, {
+  //       opacity: 1,
+  //       ease: Power3.linear
+  //     }).staggerFrom(pagination.children, .5, {
+  //       opacity: 0,
+  //       y: -30,
+  //       ease: Power3.easeIn
+  //     }, .25)
+  //   }
+  // }, []);
   
   return (
     <div className="main-page">

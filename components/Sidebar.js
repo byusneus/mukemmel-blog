@@ -26,49 +26,49 @@ const Sidebar = (props) => {
         localStorage.clear();
     }, [])
 
-    useEffect(() => {
-        var tl = new TimelineLite();
+    // useEffect(() => {
+    //     var tl = new TimelineLite();
 
-        tl.from(bg_addition, .5, {
-            height: 0,
-            ease: Power3.easeOut
-        })
-            .from(bg, 1, {
-                height: 0,
-                ease: Power3.easeIn
-            })
-            .from(profileImage, 1, {
-                opacity: 0,
-                y: -40,
-                ease: Power3.easeInOut
-            })
-            .from(profileName, 1, {
-                opacity: 0,
-                y: 40,
-                ease: Power3.easeInOut
-            }, "-=.5")
-            .from(menu_button, 1, {
-                opacity: 0,
-                y: -40,
-                ease: Power3.easeInOut
-            }, "-=.5")
-            .staggerFrom(navList.children, 1, {
-                opacity: 0,
-                y: -50,
-                ease: Power3.easeInOut
-            }, .1, "-=1")
-            .from(line, .5, {
-                opacity: 0,
-                width: 0,
-                ease: Power3.easeOut
-            })
-            .staggerFrom(socialList.children, 1, {
-                opacity: 0,
-                y: -20,
-                ease: Power3.easeInOut
-            }, .1)
+    //     tl.from(bg_addition, .5, {
+    //         height: 0,
+    //         ease: Power3.easeOut
+    //     })
+    //         .from(bg, 1, {
+    //             height: 0,
+    //             ease: Power3.easeIn
+    //         })
+    //         .from(profileImage, 1, {
+    //             opacity: 0,
+    //             y: -40,
+    //             ease: Power3.easeInOut
+    //         })
+    //         .from(profileName, 1, {
+    //             opacity: 0,
+    //             y: 40,
+    //             ease: Power3.easeInOut
+    //         }, "-=.5")
+    //         .from(menu_button, 1, {
+    //             opacity: 0,
+    //             y: -40,
+    //             ease: Power3.easeInOut
+    //         }, "-=.5")
+    //         .staggerFrom(navList.children, 1, {
+    //             opacity: 0,
+    //             y: -50,
+    //             ease: Power3.easeInOut
+    //         }, .1, "-=1")
+    //         .from(line, .5, {
+    //             opacity: 0,
+    //             width: 0,
+    //             ease: Power3.easeOut
+    //         })
+    //         .staggerFrom(socialList.children, 1, {
+    //             opacity: 0,
+    //             y: -20,
+    //             ease: Power3.easeInOut
+    //         }, .1)
 
-    }, []);
+    // }, []);
 
     const menuClicked = () => {
         if (state.clicked) {

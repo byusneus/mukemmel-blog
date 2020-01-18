@@ -23,27 +23,18 @@ const BlogPost = ({ feed, blogId, randomBlogs }) => {
   let blogImage = useRef(null);
   let blogBg = useRef(null);
 
-  useEffect(() => {
-    TweenLite.from(blogImage, 1, {
-      opacity: 0,
-      ease: Power3.easeIn
-    })
-    TweenLite.from(blogBg, 1, {
-      delay: .5,
-      opacity: 0,
-      y: 100,
-      ease: Power3.easeInOut
-    })
-  }, []);
-
-  useEffect(()=> {
-    return () => {
-      TweenLite.from(blogImage, .1, {
-        opacity: 0,
-        ease: Power3.liner
-      })
-    }
-  })
+  // useEffect(() => {
+  //   TweenLite.from(blogImage, 1, {
+  //     opacity: 0,
+  //     ease: Power3.easeIn
+  //   })
+  //   TweenLite.from(blogBg, 1, {
+  //     delay: .5,
+  //     opacity: 0,
+  //     y: 100,
+  //     ease: Power3.easeInOut
+  //   })
+  // }, []);
   
   return (
     <div>
