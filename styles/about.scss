@@ -3,174 +3,254 @@
 .about-section{
     font-family: 'Zilla Slab', serif;
     display: flex;
-    margin-left: 315px;
+    flex-direction: column;
+    margin-left: 300px;
     @media(max-width: $laptop){
         margin-left: 0;
         margin-top: 50px;
     }
-    .skills-section{
-        width: 100%;
-        height: 350px;
+    .profile{
+        padding: 75px;
+        position: relative;
         display: flex;
         justify-content: center;
-        flex-wrap: wrap;
-        .skill-container{
-            position: relative;
+        .profile-about{
+            width: 60%;
+            text-align: center;
+            h1{
+                span{
+                    color: #939070
+                }
+            }
+            .info{
+                margin-top: 50px;
+                display: flex;
+                justify-content: center;
+                .info-title{
+                    text-align: left;
+                    p{
+                        span{
+                            font-weight: bold;
+                        }
+                    }
+                }
+                .info-desc{
+                    margin-left: 50px;
+                    text-align: left;
+                }
+            }
+        }
+        .profile-pic{
+            width: 40%;
             display: flex;
-            margin: 25px 0 0 25px;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
-            background-color: #434C5E;
-            width: 250px;
-            height: 300px;
-            overflow: hidden;
-            border-radius: 10px;
-            background: linear-gradient(0deg, #1b1b1b, #222,#1b1b1b);
-            transition: .5s;
-            &::before{
-                content: '';
-                position: absolute;
-                top: 0;
-                left: -50%;
-                width: 100%;
-                height: 100%;
-                background: rgba(255,255,255,.03);
-                pointer-events: none;
-                z-index: 1;
+            img{
+                border-radius: 5px;
+                width: 70%;
             }
-            &:hover{
-                transform: translateY(-10px);
-                box-shadow: 0 15px 35px rgba(0,0,0,.5);
-                .skill-content{
-                    .skill__value{
-                        span{
-                            font-size: 1.5em;
-                        }
-                        .percent{
-                            font-size: 2.1rem;
-                        }
-                    }
-                }
-            }
-            .skill-bar{
-                position: absolute;
-                width: 150px;
-                height: 150px;
-                right: 0;
-                bottom: 0;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                box-shadow: insert 0 0 50px #000;
-                .skill__track{
-                    fill: transparent;
-                    stroke: #000;
-                    stroke-width: 3px;
-                }
-                .skill__thumb{
-                    fill: transparent;
-                    stroke: #939070;
-                    stroke-width: 3px;
-                    stroke-dasharray: 0 calc(30*2*3.141593);
-                    stroke-linecap: round;
-                    transform: rotate(-90deg);
-                    transform-origin: 50% 50%;
-                }
-            }
-            &:nth-child(1){
-                .skill-bar{
-                    .skill__thumb{
-                        animation: birinci 1.2s forwards;
-                        @keyframes birinci {
-                            to {
-                              stroke-dasharray: 175;
-                            }
-                        }
-                    }
-                }
-            }
-            &:nth-child(2){
-                .skill-bar{
-                    .skill__thumb{
-                        animation: ikinci 1.2s forwards;
-                        @keyframes ikinci {
-                            to {
-                              stroke-dasharray: 140;
-                            }
-                        }
-                    }
-                }
-            }
-            &:nth-child(3){
-                .skill-bar{
-                    .skill__thumb{
-                        animation: ucuncu 1.2s forwards;
-                        @keyframes ucuncu {
-                            to {
-                              stroke-dasharray: 120;
-                            }
-                        }
-                    }
-                }
-            }
-            &:nth-child(4){
-                .skill-bar{
-                    .skill__thumb{
-                        animation: dorduncu 1.2s forwards;
-                        @keyframes dorduncu {
-                            to {
-                              stroke-dasharray: 155;
-                            }
-                        }
-                    }
-                }
-            }
-            .skill-content {
-                text-align: center;
-                .skill__value {
+            .cv-button{
+                margin-top: 35px;
+                .btn{
+                    border-radius: 5px;
+                    text-align: center;
+                    padding: 15px;
+                    text-decoration: none;
+                    background-color: #1b1b1b;
                     color: #939070;
-                    position: relative;
-                    display: inline-block;
-                    transform: scale(0);
-                    animation: pulse 400ms 1.6s forwards;
-                    .percent{
-                        transition: .5s all;
-                        font-size: 1.8em;
+                    font-weight: bold;
+                    transition: .5s;
+                    &:hover{
+                        background-color: #939070;
+                        color: #1b1b1b;
                     }
-                    span {
-                        font-size: 1.2em;
-                        transition: .5s all;
-                    }
-                    @keyframes pulse {
-                        0% {
-                          transform: scale(0);
-                        }
-                        
-                        60% {
-                          transform: scale(1.4);
-                        }
-                        
-                        100% {
-                          transform: scale(1);
+                }
+            }
+        }
+    }
+
+    .skills-section{
+        margin-top: 50px;
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        h2{
+            color: #303030;
+        }
+        .line{
+            width: 35%;
+            height: 2px;
+            background-color: #303030;
+        }
+        .skills{
+            margin: 20px 0;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            .skill-container{
+                position: relative;
+                display: flex;
+                margin: 25px 0 0 25px;
+                justify-content: center;
+                align-items: center;
+                background-color: #434C5E;
+                width: 250px;
+                height: 300px;
+                overflow: hidden;
+                border-radius: 10px;
+                background: linear-gradient(0deg, #1b1b1b, #222,#1b1b1b);
+                transition: .5s;
+                &::before{
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: -50%;
+                    width: 100%;
+                    height: 100%;
+                    background: rgba(255,255,255,.03);
+                    pointer-events: none;
+                    z-index: 1;
+                }
+                &:hover{
+                    transform: translateY(-10px);
+                    box-shadow: 0 15px 35px rgba(0,0,0,.5);
+                    .skill-content{
+                        .skill__value{
+                            span{
+                                font-size: 1.5em;
+                            }
+                            .percent{
+                                font-size: 2.1rem;
+                            }
                         }
                     }
                 }
-                .skill__text {
-                    color: #9399A5;
-                    text-transform: uppercase;
-                    letter-spacing: 1px;
-                    max-height: 0;
-                    overflow-y: hidden;
-                    animation: flyin 500ms 1.9s forwards;
-                    @keyframes flyin {
-                        from {
-                          max-height: 0;
-                          opacity: 0;
+                .skill-bar{
+                    position: absolute;
+                    width: 150px;
+                    height: 150px;
+                    right: 0;
+                    bottom: 0;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    box-shadow: insert 0 0 50px #000;
+                    .skill__track{
+                        fill: transparent;
+                        stroke: #000;
+                        stroke-width: 3px;
+                    }
+                    .skill__thumb{
+                        fill: transparent;
+                        stroke: #939070;
+                        stroke-width: 3px;
+                        stroke-dasharray: 0 calc(30*2*3.141593);
+                        stroke-linecap: round;
+                        transform: rotate(-90deg);
+                        transform-origin: 50% 50%;
+                    }
+                }
+                &:nth-child(1){
+                    .skill-bar{
+                        .skill__thumb{
+                            animation: birinci 1.2s forwards;
+                            @keyframes birinci {
+                                to {
+                                  stroke-dasharray: 175;
+                                }
+                            }
                         }
-                        
-                        to {
-                          max-height: 20px;
-                          opacity: .5;
+                    }
+                }
+                &:nth-child(2){
+                    .skill-bar{
+                        .skill__thumb{
+                            animation: ikinci 1.2s forwards;
+                            @keyframes ikinci {
+                                to {
+                                  stroke-dasharray: 140;
+                                }
+                            }
+                        }
+                    }
+                }
+                &:nth-child(3){
+                    .skill-bar{
+                        .skill__thumb{
+                            animation: ucuncu 1.2s forwards;
+                            @keyframes ucuncu {
+                                to {
+                                  stroke-dasharray: 120;
+                                }
+                            }
+                        }
+                    }
+                }
+                &:nth-child(4){
+                    .skill-bar{
+                        .skill__thumb{
+                            animation: dorduncu 1.2s forwards;
+                            @keyframes dorduncu {
+                                to {
+                                  stroke-dasharray: 155;
+                                }
+                            }
+                        }
+                    }
+                }
+                .skill-content {
+                    text-align: center;
+                    .skill__value {
+                        color: #939070;
+                        position: relative;
+                        display: inline-block;
+                        transform: scale(0);
+                        animation: pulse 400ms 1.6s forwards;
+                        .percent{
+                            transition: .5s all;
+                            font-size: 1.8em;
+                        }
+                        span {
+                            font-size: 1.2em;
+                            transition: .5s all;
+                        }
+                        @keyframes pulse {
+                            0% {
+                              transform: scale(0);
+                            }
+                            
+                            60% {
+                              transform: scale(1.4);
+                            }
+                            
+                            100% {
+                              transform: scale(1);
+                            }
+                        }
+                    }
+                    .skill__text {
+                        color: #9399A5;
+                        text-transform: uppercase;
+                        letter-spacing: 1px;
+                        max-height: 0;
+                        overflow-y: hidden;
+                        animation: flyin 500ms 1.9s forwards;
+                        @keyframes flyin {
+                            from {
+                              max-height: 0;
+                              opacity: 0;
+                            }
+                            
+                            to {
+                              max-height: 20px;
+                              opacity: .5;
+                            }
                         }
                     }
                 }
