@@ -1,5 +1,7 @@
 const withImages = require('next-images')
-module.exports = withImages({
+const withCSS = require('@zeit/next-css')
+
+module.exports = withImages(withCSS({
   env: {
     development: 'http://yunusemrealpak.com',
   },
@@ -20,7 +22,7 @@ module.exports = withImages({
 
     return config
   }
-})
+}))
 
 // const withPlugins = require("next-compose-plugins");
 // const withCSS = require("@zeit/next-css");
