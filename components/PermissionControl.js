@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 import Router from "next/router";
 
-const PermissionControl = () => {
+const PermissionControl = props => {
 
     const [permission, setPermission] = useState(false);
 
@@ -17,7 +17,7 @@ const PermissionControl = () => {
 
     return(
         <div>
-            {permission ? children : null}
+            {permission ? props.children : null}
         </div>
     )
 }

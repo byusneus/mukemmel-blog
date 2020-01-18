@@ -25,7 +25,7 @@ const AdminSidebar = (props) => {
                     <div className="hamburger"></div>
                 </div>
                 <nav className="sidebar">
-                    <div className="profile-name">Yunus Emre ALPAK</div>
+                    <Link href="/"><a className="profile-name btn">Yunus Emre ALPAK</a></Link>
                     <ul className={`nav-list${state.clicked ? " active" : ""}`}>
                         <li className="nav-item">
                             <Link href="/admin/dashboard"><a className="btn">BLOGLAR</a></Link>
@@ -35,8 +35,8 @@ const AdminSidebar = (props) => {
                             <Link href="/admin/blog-add"><a className="btn">BLOG EKLE</a></Link>
                             <hr />
                         </li>
-                        <li className="nav-item">
-                            <Link href="/admin/blog-add"><a className="btn">PROFİL</a></Link>
+                        <li className="nav-item disabled">
+                            <div className="btn">PROFİL</div>
                             <hr />
                         </li>
                     </ul>
