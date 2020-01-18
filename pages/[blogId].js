@@ -116,7 +116,7 @@ BlogPost.getInitialProps = async ({ req, query }) => {
   let bloglar = [];
   let randomBlogs = [];
   result.forEach(doc => {
-    if (!doc.data().slug == query.blogId)
+    if (doc.data().slug !== query.blogId)
         bloglar.push(doc.data());
   })
 
