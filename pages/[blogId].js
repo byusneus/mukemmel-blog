@@ -107,16 +107,17 @@ const BlogPost = ({ feed, blogId, randomBlogs }) => {
 }
 
 BlogPost.getInitialProps = async ({ req, query }) => {
+  const res = await firestore.collection("bloglar").where("slug", "==", `${query.blogId}`).get();
+  let blog = null;
+  res.forEach((doc) => {
+      blog = doc.data();
+  })
   const result = await firestore.collection("bloglar").get();
   let bloglar = [];
   let randomBlogs = [];
-
-  let blog = null;
   result.forEach(doc => {
-    if (doc.data().slug == query.blogId)
-      blog = doc.data();
-    else
-      bloglar.push(doc.data());
+    if (!doc.data().slug == query.blogId)
+        bloglar.push(doc.data());
   })
 
   if (bloglar.length >= 3) {
