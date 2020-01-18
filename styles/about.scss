@@ -18,9 +18,24 @@
             width: 60%;
             text-align: center;
             h1{
+                font-weight: 600;
+                font-size: 1.6rem;
                 span{
-                    color: #939070
+                    background-color: #303030;
+                    padding: 10px 15px;
+                    border-radius: 5px;
+                    font-family: 'Dancing Script', cursive;
+                    color: #939070;
+                    font-size: 1.6rem;
                 }
+            }
+            h2{
+                font-weight: 600;
+                font-size: 1.3rem;
+            }
+            .about-text{
+                padding-top: 50px;
+                text-align: left;
             }
             .info{
                 margin-top: 50px;
@@ -71,7 +86,7 @@
     }
 
     .skills-section{
-        margin-top: 50px;
+        margin-top: 10px;
         width: 100%;
         height: auto;
         display: flex;

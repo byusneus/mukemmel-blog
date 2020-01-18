@@ -98,8 +98,8 @@ const Sidebar = (props) => {
                             <Link href="/"><a className="btn">ANASAYFA</a></Link>
                             <hr />
                         </li>
-                        <li className="nav-item">
-                            <Link href="/"><a className="btn">GALERİ</a></Link>
+                        <li className="nav-item disabled">
+                            <div className="btn">GALERİ</div>
                             <hr />
                         </li>
                         <li className="nav-item">

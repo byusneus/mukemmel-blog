@@ -173,15 +173,35 @@ header{
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            
             letter-spacing: 2px;
             list-style-type: none;
             .nav-item{
-                
                 font-family: 'Zilla Slab', serif;
                 font-size: 15px;
                 font-weight: 600;
                 margin-bottom: 50px;
+                &.disabled::before{
+                    content: 'Yakında';
+                    position: absolute;
+                    padding: 5px;
+                    font-size: 10px;
+                    font-weight: bold;
+                    top: -15%;
+                    left: 80%;
+                    transform: translate(-50%, -50%);
+                    color: white;
+                    background-color: rgba(255, 0, 0, 0.199);
+                    transform: rotate(30deg);
+                    cursor: default;
+                }
+                &.disabled{
+                    hr{
+                        display: none;
+                    }
+                    .btn{
+                        cursor: default;
+                    }
+                }
                 .btn{
                     text-decoration: none;
                     color: #939087;

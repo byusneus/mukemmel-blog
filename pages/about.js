@@ -1,15 +1,72 @@
 import styles from "../styles/about.scss"
 import profile from "../images/ogr_foto.jpg"
-import Link from "next/link"
+import { TimelineLite, Power3 } from "gsap"
+import { useEffect, useRef } from "react"
 
 const About = () => {
+
+    let title = useRef(null);
+
+    useEffect(()=>{
+        var title = document.querySelectorAll(".about-title");
+        var subtitle = document.querySelectorAll(".about-subtitle");
+        var text = document.querySelectorAll(".about-text");
+        var info = document.querySelectorAll(".info");
+        var skillsSection = document.querySelectorAll(".skills-section");
+        var profilePic = document.querySelectorAll(".profile-pic img");
+        var downloadBtn = document.querySelectorAll(".cv-button");
+
+        var tl = new TimelineLite();
+        tl.from(title, 1.2, {
+            opacity:0,
+            y: 50,
+            ease: Power3.easeOut,
+        }).from(subtitle, {
+            delay: -0.8,
+            duration: 1.2, 
+            opacity:0,
+            y: 50,
+            ease: Power3.easeOut,
+        }).from(text, {
+            delay: -0.8,
+            duration: 1.2, 
+            opacity:0,
+            y: -50,
+            ease: Power3.easeOut,
+        }).from(info, {
+            delay: -0.8,
+            duration: 1.2, 
+            opacity:0,
+            y: -50,
+            ease: Power3.easeOut,
+        }).from(profilePic, {
+            delay: -1,
+            duration: 1.2, 
+            opacity:0,
+            x: 100,
+            ease: Power3.easeOut,
+        }).from(downloadBtn, {
+            delay: -0.5,
+            duration: 1.2, 
+            opacity:0,
+            y: -50,
+            ease: Power3.easeOut,
+        }).from(skillsSection, {
+            delay: -0.8,
+            duration: 1.2, 
+            opacity:0,
+            y: 50,
+            ease: Power3.easeOut,
+        })
+    },[])
+
     return (
         <div className="about-section">
             <div className="profile">
                 <div className="profile-about">
-                    <h1>MERHABA, BEN  <span><u>YUNUS EMRE ALPAK</u></span></h1>
-                    <h2>Web ve Mobil Geliştirici</h2>
-                    <p>Web ve Mobil dünyasında kendini geliştirmeye devam eden bir Bilgisayar Mühendisliği öğrencisiyim. Yeni teknolojileri takip etmeye çalışıp kendimi kaybetmemeye dikkat ediyorum. Farklı sektörlerde bir süre kaybolduktan sonra kendimi tekrar web ve mobile çevirdim. Aklında bir çok projesi olan, sabırsız bir yazılımcıyım. Durmak yok yola devam...</p>
+                    <h1 className="about-title">MERHABA, BEN  <span><i>YUNUS EMRE ALPAK</i></span></h1>
+                    <h2 className="about-subtitle"><span>Web ve Mobil Geliştirici</span></h2>
+                    <p className="about-text">Web ve Mobil dünyasında kendini geliştirmeye devam eden bir Bilgisayar Mühendisliği öğrencisiyim. Yeni teknolojileri takip etmeye çalışıp kendimi kaybetmemeye dikkat ediyorum. Farklı sektörlerde bir süre kaybolduktan sonra kendimi tekrar web ve mobile çevirdim. Aklında bir çok projesi olan, sabırsız bir yazılımcıyım. Durmak yok yola devam...</p>
                     <div className="info">
                         <div className="info-title">
                             <p><span>Age</span></p>
