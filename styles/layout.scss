@@ -134,38 +134,47 @@ header{
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
-        .profile{
-            position: relative;
-            width: 100%;
-            margin-top: 50px;
+        .profile-section{
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            .profile-box{
+            .profile{
+                position: relative;
                 width: 100%;
-                text-align: center;
-                .profile-img{
-                    width: 50%;
-                    border-radius: 50%;
-                    box-shadow: 0 12px 25px -2px black;
+                margin-top: 50px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                .profile-box{
+                    width: 100%;
+                    text-align: center;
+                    .profile-img{
+                        width: 50%;
+                        border-radius: 50%;
+                        box-shadow: 0 12px 25px -2px black;
+                    }
+                }
+                @media(max-width: $laptop){
+                    display: none;
                 }
             }
-            @media(max-width: $laptop){
-                display: none;
-            }
-        }
-        .profile-name{
-            margin-top: -100px;
-            font-family: 'Zilla Slab', serif;
-            font-size: 1.4rem;
-            font-weight: 600;
-            color: #939087;
-            @media(max-width: $laptop){
-                position: absolute;
-                margin-top: 0;
-                top: 10%;
-                left: 40%;
+            .profile-name{
+                padding-top: 50px;
+                font-family: 'Zilla Slab', serif;
+                font-size: 1.4rem;
+                font-weight: 600;
+                color: #939087;
+                @media(max-width: 1366px){
+                    font-size: 1.2rem;
+                }
+                @media(max-width: $laptop){
+                    position: absolute;
+                    margin-top: 0;
+                    top: 10%;
+                    left: 40%;
+                }
             }
         }
         .nav-list{
@@ -217,6 +226,9 @@ header{
                     border: none;
                     background-color: #939087;
                 }
+                @media(max-width: 1366px){
+                    font-size: 12px;
+                }
             }
             .nav-item:hover{
                 cursor: pointer;
@@ -224,6 +236,7 @@ header{
                     width: 100%;
                 }
             }
+            
             @media(max-width: $laptop){
                 display: none;
             }

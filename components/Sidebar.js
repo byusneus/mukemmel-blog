@@ -87,12 +87,14 @@ const Sidebar = (props) => {
                 <div ref={(el) => { bg_addition = el }} className="bg-addition"></div>
                 <div ref={(el) => { bg = el }} className={`bg${state.clicked ? " active" : ""}`}></div>
                 <nav className="sidebar">
-                    <div className="profile">
-                        <div ref={(el) => { profileImage = el }} className="profile-box">
-                            <img className="profile-img" src={profile} />
+                    <div className="profile-section">
+                        <div className="profile">
+                            <div ref={(el) => { profileImage = el }} className="profile-box">
+                                <img className="profile-img" src={profile} />
+                            </div>
                         </div>
+                        <div ref={(el) => { profileName = el }} className="profile-name">Yunus Emre ALPAK</div>
                     </div>
-                    <div ref={(el) => { profileName = el }} className="profile-name">Yunus Emre ALPAK</div>
                     <ul ref={(el) => { navList = el }} className={`nav-list${state.clicked ? " active" : ""}`}>
                         <li className="nav-item">
                             <Link href="/"><a className="btn">ANASAYFA</a></Link>
