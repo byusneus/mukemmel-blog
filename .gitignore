@@ -6,7 +6,6 @@
 .pnp.js
 
 # firebase config settings
-config/firebase-config.js
 
 # testing
 /coverage
@@ -16,15 +15,8 @@ config/firebase-config.js
 /out/
 
 # production
-/build
 
 # misc
 .DS_Store
 .env*
 
-# debug
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-report.20200115.073148.13704.0.001.json
-report.20200115.073741.17280.0.001.json
