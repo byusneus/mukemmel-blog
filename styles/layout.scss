@@ -136,12 +136,14 @@ header{
         align-items: center;
         .profile{
             position: relative;
+            width: 100%;
             margin-top: 50px;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             .profile-box{
+                width: 100%;
                 text-align: center;
                 .profile-img{
                     width: 50%;
@@ -193,6 +195,7 @@ header{
                     background-color: rgba(255, 0, 0, 0.199);
                     transform: rotate(30deg);
                     cursor: default;
+                    z-index: 80;
                 }
                 &.disabled{
                     hr{
