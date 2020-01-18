@@ -104,6 +104,14 @@
                     bottom: 5%;
                 }
             }
+            @media(max-width: 1366px){
+                width: 200px;
+                height: 200px;
+                img{
+                    width: 200px;
+                    height: 200px;
+                }
+            }
             @media(max-width: $laptop){
                 transform: none;
                 margin: 10px;
@@ -121,6 +129,10 @@
                 width: 300px;
                 height: 200px;
                 filter:saturate(1);
+                @media(max-width: 1366px){
+                    width: 200px;
+                    height: 120px;
+                }
                 @media(max-width: $laptop){
                     width: 200px;
                     height: 120px;
