@@ -22,6 +22,7 @@ const BlogEdit = ({ blog }) => {
 
     useEffect(() => {
         if (html) {
+            setSlug(blog.slug);
             setTitle(blog.title);
             var editor = document.getElementsByClassName("ql-editor").item(0);
             editor.innerHTML += blog.text;
