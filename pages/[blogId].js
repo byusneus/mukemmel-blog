@@ -3,9 +3,6 @@ import Head from "../components/Head";
 import Link from "next/link";
 import firestore from "../common/firestore";
 import styles from "../styles/blog.scss"
-import { TweenLite, Power3 } from "gsap";
-import { Tween, Timeline } from 'react-gsap';
-import { Controller, Scene } from 'react-scrollmagic';
 import facebook from "../images/facebook.png";
 import twitter from "../images/twitter.png";
 import reddit from "../images/reddit.png";

@@ -6,8 +6,8 @@ import firestore from "../../common/firestore";
 import Link from "next/link"
 import Popup from "reactjs-popup"
 import { useState, useEffect } from "react";
-import Router from "next/router";
 import PermissionControl from "../../components/PermissionControl";
+import Head from "../components/Head";
 
 const Dashboard = ({ blogList }) => {
 
@@ -21,6 +21,7 @@ const Dashboard = ({ blogList }) => {
 
   return (
     <PermissionControl>
+      <Head title="Dashboard - Admin Panel" />
       <div className="main-content">
         <table className="content-table">
           <thead>

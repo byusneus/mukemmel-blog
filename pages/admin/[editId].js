@@ -5,6 +5,7 @@ import firestore from "../../common/firestore"
 import Loader from 'react-loader-spinner'
 import Router from "next/router"
 import PermissionControl from "../../components/PermissionControl";
+import Head from "../components/Head";
 
 const BlogEdit = ({ blog }) => {
 
@@ -112,6 +113,7 @@ const BlogEdit = ({ blog }) => {
 
     return (
         <PermissionControl>
+            <Head title={`${html ? blog.title : "Loading"}`} />
             <div>
                 <div className={`loader${html ? " deactive" : ""}`}>
                     <Loader

@@ -3,7 +3,7 @@ const withCSS = require('@zeit/next-css')
 
 module.exports = withImages(withCSS({
   env: {
-    development: 'https://yunus-emre-blog.herokuapp.com',
+    development: 'http://yunusemrealpak.com',
   },
   webpack: (config, { defaultLoaders }) => {
     config.module.rules.push({

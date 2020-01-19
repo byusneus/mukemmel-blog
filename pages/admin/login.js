@@ -6,6 +6,7 @@ import ogr_foto from "../../images/ogr_foto.jpg"
 import styles from "../../styles/login.scss";
 import { TweenLite, TimelineLite, Power3 } from "gsap";
 import Loader from 'react-loader-spinner'
+import Head from "../components/Head";
 
 const Admin = () => {
     let login_button = useRef(null);
@@ -46,6 +47,7 @@ const Admin = () => {
 
     return (
         <div>
+            <Head title="Admin Login" />
             {busy ? <div className="loader">
                 <Loader
                     type="Rings"

@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import styles from "../styles/home.scss";
 import Loader from 'react-loader-spinner'
 import firestore from "../common/firestore";
+import Head from "../components/Head";
 
 const Home = ({ blogList }) => {
 
@@ -15,6 +16,7 @@ const Home = ({ blogList }) => {
   
   return (
     <div className="main-page">
+      <Head title="Anasayfa - yunusemrealpak.com" />
       {blogList == null
         ? <div>
           <Loader

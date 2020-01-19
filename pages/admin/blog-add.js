@@ -6,6 +6,7 @@ import firebase from "../../common/firebase";
 import Router from 'next/router';
 import Loader from 'react-loader-spinner'
 import PermissionControl from "../../components/PermissionControl";
+import Head from "../components/Head";
 
 const BlogEkle = () => {
 
@@ -122,6 +123,7 @@ const BlogEkle = () => {
 
     return (
         <PermissionControl>
+            <Head title="Admin - Blog Ekleme" />
             <div>
                 {busy ? <div className="loader">
                     <Loader
