@@ -213,6 +213,18 @@
                             animation: dorduncu 1.2s forwards;
                             @keyframes dorduncu {
                                 to {
+                                  stroke-dasharray: 94;
+                                }
+                            }
+                        }
+                    }
+                }
+                &:nth-child(5){
+                    .skill-bar{
+                        .skill__thumb{
+                            animation: besinci 1.2s forwards;
+                            @keyframes besinci {
+                                to {
                                   stroke-dasharray: 155;
                                 }
                             }
