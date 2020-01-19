@@ -6,7 +6,7 @@ import firebase from "../../common/firebase";
 import Router from 'next/router';
 import Loader from 'react-loader-spinner'
 import PermissionControl from "../../components/PermissionControl";
-import Head from "../components/Head";
+import Head from "../../components/Head";
 
 const BlogEkle = () => {
 

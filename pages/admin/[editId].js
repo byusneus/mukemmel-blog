@@ -5,7 +5,7 @@ import firestore from "../../common/firestore"
 import Loader from 'react-loader-spinner'
 import Router from "next/router"
 import PermissionControl from "../../components/PermissionControl";
-import Head from "../components/Head";
+import Head from "../../components/Head";
 
 const BlogEdit = ({ blog }) => {
 

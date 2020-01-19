@@ -7,7 +7,7 @@ import Link from "next/link"
 import Popup from "reactjs-popup"
 import { useState, useEffect } from "react";
 import PermissionControl from "../../components/PermissionControl";
-import Head from "../components/Head";
+import Head from "../../components/Head";
 
 const Dashboard = ({ blogList }) => {
 
