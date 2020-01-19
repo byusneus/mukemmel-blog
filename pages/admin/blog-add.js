@@ -22,7 +22,8 @@ const BlogEkle = () => {
 
     const fileUploadHandler = async () => {
         var storageRef = firebase.storage().ref();
-        var mainImage = storageRef.child(image.name);
+        var randomName = randomImageName();
+        var mainImage = storageRef.child(randomName);
         var mainUrl = "";
 
         mainImage.put(image).then((snapshot) => {
@@ -37,17 +38,32 @@ const BlogEkle = () => {
 
     }
 
+    const randomImageName = () => {
+        var result           = '';
+        var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        var charactersLength = characters.length;
+        for ( var i = 0; i < 10; i++ ) {
+           result += characters.charAt(Math.floor(Math.random() * charactersLength));
+        }
+        return result;
+     }
+
     const saveText = async (pictureUrl) => {
         var editor = document.getElementsByClassName("ql-editor").item(0);
         let length = 0;
-        var bloglar = await firestore.collection("bloglar").get();
-        bloglar.forEach((doc) => {
-            length++;
-        })
+        try{
+            var bloglar = await firestore.collection("bloglar").get();
+            bloglar.forEach((doc) => {
+                length++;
+            })
+        }catch(e){
+            
+        }
+        
         var newBlog = firestore.collection("bloglar").doc();
 
         var text = setImageWidth(editor.innerHTML);
-        var slug = getSlugFromTitle();
+        // var slug = getSlugFromTitle();
         var date = getDateFormatString();
 
         var data = {
@@ -118,7 +134,16 @@ const BlogEkle = () => {
                     : null}
                 <div className="main-content">
                     <div className="title"><input className="blog-title" placeholder="BLOG BAŞLIK" onChange={event => setTitle(event.target.value)} /></div>
-                    <div className="blog-image">Blog Ana Resim : <input type="file" onChange={event => setImage(event.target.files[0])} /></div>
+                    <div className="blog-info">
+                        <div className="blog-info-title">
+                            <p>Kalıcı bağlantı <span>:</span></p>
+                            <p>Blog Ana Resim <span>:</span></p>
+                        </div>
+                        <div className="blog-info-desc">
+                           <p> <span>{process.env.development}/<input onChange={event => setSlug(event.target.value)} /></span></p>
+                           <p><input type="file" onChange={event => setImage(event.target.files[0])} /></p>
+                        </div>
+                    </div>
                     <QuillNoSSRWrapper />
                     <button className="save-button" onClick={saveContent}>KAYDET</button>
 

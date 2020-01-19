@@ -58,7 +58,7 @@ const BlogEdit = ({ blog }) => {
         var updateBlog = firestore.collection("bloglar").doc(blog._id);
 
         var text = setImageWidth(editor.innerHTML);
-        var slug = getSlugFromTitle();
+        // var slug = getSlugFromTitle();
         var date = getDateFormatString();
 
         var data = {
@@ -123,7 +123,16 @@ const BlogEdit = ({ blog }) => {
                 </div>
                 <div className="main-content">
                     <div className="title"><input className="blog-title" placeholder="BLOG BAŞLIK" onChange={event => setTitle(event.target.value)} defaultValue={blog.title} /></div>
-                    <div className="blog-image">Blog Ana Resim : <input type="file" onChange={event => setImage(event.target.files[0])} /></div>
+                    <div className="blog-info">
+                        <div className="blog-info-title">
+                            <p>Kalıcı bağlantı <span>:</span></p>
+                            <p>Blog Ana Resim <span>:</span></p>
+                        </div>
+                        <div className="blog-info-desc">
+                           <p> <span>{process.env.development}/<input onChange={event => setSlug(event.target.value)} defaultValue={blog.slug}/></span></p>
+                           <p><input type="file" onChange={event => setImage(event.target.files[0])}/></p>
+                        </div>
+                    </div>
                     <QuillNoSSRWrapper />
                     <button id="el" className="save-button" onClick={saveContent}>GÜNCELLE</button>
 

@@ -64,6 +64,30 @@
             width: 100%;
         }
     }
+    .blog-info{
+        display: flex;
+        justify-content: center;
+        .blog-info-title{
+            text-align: left;
+            p{
+                display: flex;
+                justify-content: space-between;
+                padding: 10px;
+                font-weight: bold;
+                span{
+                    padding-left: 5px;
+                    text-align: right;
+                }
+            }
+        }
+        .blog-info-desc{
+            margin-left: 50px;
+            text-align: left;
+            p{
+                padding: 10px;
+            }
+        }
+    }
     @media(max-width: $laptop){
         margin-top: 5vh;
         margin-left: 0;

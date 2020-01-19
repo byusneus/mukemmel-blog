@@ -29,7 +29,7 @@ class MyApp extends App {
                         ?<AdminSidebar /> 
                         :null
                 }
-                <div className="background"></div>
+                {!router.route.includes("admin") ? <div className="background"></div> : null}
                 <main>
                     <AnimatePresence exitBeforeEnter>
                         <motion.div
